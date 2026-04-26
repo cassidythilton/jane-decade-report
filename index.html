@@ -1,0 +1,2587 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Decade Report: The 2010s — by Jane H.</title>
+  <meta name="description" content="A decade report on the 2010s — the political and cultural events that defined the decade. By Jane H." />
+
+  <!-- Fonts (free, no signup) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================================
+       The 2010s — Decade Report
+       A single-page website by Jane H.
+       ========================================================= */
+
+    /* ---------- Design tokens (colors + spacing) ------------- */
+    :root {
+      --ink:    #1a1330;          /* main text */
+      --ink-2:  #4a4366;          /* secondary text */
+      --paper:  #fff8f1;          /* page background */
+      --line:   #1a133018;        /* hairline borders */
+
+      --pink:   #ff3d8a;
+      --hot:    #ff7a3d;
+      --sun:    #ffd23f;
+      --mint:   #3ddca0;
+      --sky:    #5cc8ff;
+      --grape:  #8a4dff;
+
+      --shadow-card:  0 18px 40px -22px rgba(26,19,48,.35), 0 2px 8px -4px rgba(26,19,48,.18);
+      --shadow-soft:  0 6px 20px -10px rgba(26,19,48,.25);
+
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+    }
+
+    /* ---------- Reset / base ---------------------------------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    /* ---------- Layout helpers -------------------------------- */
+    .wrap {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ---------- Sticky top nav -------------------------------- */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255, 248, 241, 0.85);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+    }
+    .topbar .brand {
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+    }
+    .topbar .brand .yr {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--pink), var(--hot));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .topbar nav {
+      display: flex; gap: 22px;
+      font-weight: 600; font-size: 14px;
+    }
+    .topbar nav a {
+      text-decoration: none;
+      color: var(--ink-2);
+      transition: color .15s ease;
+    }
+    .topbar nav a:hover { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .topbar nav { display: none; }
+    }
+
+    /* ---------- Hero ------------------------------------------ */
+    .hero {
+      position: relative;
+      padding: 96px 0 80px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 80% 0%, #ffd23f55 0%, transparent 40%),
+        radial-gradient(ellipse at 0% 100%, #ff3d8a40 0%, transparent 45%),
+        var(--paper);
+    }
+    .hero .wrap { position: relative; }
+    .hero .tag {
+      display: inline-block;
+      font-family: "Permanent Marker", cursive;
+      background: var(--ink);
+      color: var(--sun);
+      padding: 6px 16px;
+      border-radius: 999px;
+      transform: rotate(-2deg);
+      font-size: 16px;
+      letter-spacing: .02em;
+    }
+    .hero h1 {
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      font-size: clamp(72px, 14vw, 180px);
+      line-height: 0.9;
+      letter-spacing: -0.025em;
+      margin: 28px 0 0;
+    }
+    .hero h1 em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--pink) 0%, var(--hot) 50%, var(--sun) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero .meta {
+      display: flex; flex-wrap: wrap;
+      gap: 24px; align-items: baseline;
+      margin-top: 32px;
+      font-size: 18px; font-weight: 500; color: var(--ink-2);
+    }
+    .hero .meta strong { color: var(--ink); font-weight: 700; }
+    .hero .meta .dot {
+      display: inline-block; width: 4px; height: 4px; border-radius: 50%;
+      background: var(--ink-2); margin: 0 4px;
+    }
+    .hero .lede {
+      max-width: 620px;
+      margin-top: 28px;
+      font-size: 19px;
+      color: var(--ink-2);
+    }
+
+    /* ---------- Section dividers ------------------------------ */
+    .section-mark {
+      padding: 80px 0 28px;
+    }
+    .section-mark .kicker {
+      font-family: "Permanent Marker", cursive;
+      font-size: 18px;
+      color: var(--ink-2);
+      letter-spacing: .02em;
+    }
+    .section-mark h2 {
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      font-size: clamp(56px, 9vw, 112px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin: 8px 0 0;
+    }
+    .section-mark.political h2 em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--sky), var(--grape));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .section-mark.cultural h2 em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--pink), var(--hot));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .section-mark p {
+      max-width: 600px;
+      margin: 18px 0 0;
+      font-size: 18px;
+      color: var(--ink-2);
+    }
+
+    /* ---------- Topic cards ----------------------------------- */
+    .topic {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+    }
+    .topic .row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 36px;
+    }
+    .topic .label {
+      font-family: "Permanent Marker", cursive;
+      font-size: 16px;
+      color: var(--ink-2);
+      padding-top: 12px;
+    }
+    .topic .label .num {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: .14em;
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin-right: 8px;
+      vertical-align: 3px;
+    }
+    .topic h3 {
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      font-size: clamp(34px, 4.4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      margin: 0 0 18px;
+    }
+    .topic h3 em { font-style: italic; }
+    .topic p {
+      font-size: 18px;
+      color: var(--ink);
+      max-width: 720px;
+      margin: 0 0 14px;
+    }
+    .topic p .pop {
+      background: linear-gradient(180deg, transparent 60%, var(--sun) 60%);
+      padding: 0 2px;
+    }
+    .topic .small {
+      font-size: 14px; color: var(--ink-2);
+      margin-top: 20px;
+    }
+
+    @media (max-width: 720px) {
+      .topic .row { grid-template-columns: 1fr; gap: 12px; }
+      .topic .label { padding-top: 0; }
+    }
+
+    /* ---------- Pop Stars / polaroid grid --------------------- */
+    .polaroids {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 28px;
+    }
+    .polaroid {
+      background: white;
+      padding: 14px 14px 22px;
+      border-radius: 6px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+    }
+    .polaroid:nth-child(1) { transform: rotate(-2deg); }
+    .polaroid:nth-child(2) { transform: rotate( 1.5deg); }
+    .polaroid:nth-child(3) { transform: rotate(-1deg); }
+    .polaroid .pic {
+      aspect-ratio: 1 / 1;
+      border-radius: 3px;
+      display: grid; place-items: center;
+      font-size: 72px;
+      overflow: hidden;
+      background: #1a133008;
+    }
+    .polaroid .pic img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .polaroid .nm {
+      font-family: "Permanent Marker", cursive;
+      font-size: 22px;
+      margin-top: 14px;
+    }
+    @media (max-width: 720px) {
+      .polaroids { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Presidents card ------------------------------- */
+    .pres-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 8px;
+    }
+    .pres-card {
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--line);
+    }
+    .pres-card.obama { background: linear-gradient(135deg, #5cc8ff20, #8a4dff20); }
+    .pres-card.trump { background: linear-gradient(135deg, #ff3d8a20, #ff7a3d20); }
+    .pres-card .role {
+      font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+      font-weight: 700; color: var(--ink-2);
+    }
+    .pres-card .name {
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      font-size: 30px;
+      margin-top: 6px;
+    }
+    .pres-card .yrs {
+      margin-top: 8px; font-size: 16px; font-weight: 600;
+    }
+    .pres-card .portrait {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 14px;
+      background: white;
+    }
+    .pres-card .portrait img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 720px) {
+      .pres-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Numbered list (domestic policy) --------------- */
+    .num-list {
+      list-style: none;
+      padding: 0; margin: 18px 0 0;
+      counter-reset: dp;
+    }
+    .num-list li {
+      counter-increment: dp;
+      padding: 14px 0 14px 56px;
+      position: relative;
+      border-top: 1px solid var(--line);
+      font-size: 17px;
+    }
+    .num-list li:first-child { border-top: none; padding-top: 14px; }
+    .num-list li::before {
+      content: counter(dp, decimal-leading-zero);
+      position: absolute; left: 0; top: 14px;
+      font-family: "Fraunces", serif; font-weight: 900;
+      font-size: 22px; color: var(--pink);
+      width: 40px;
+    }
+    .num-list li strong { font-weight: 700; }
+
+    /* ---------- Pill chips (civil rights, fashion) ------------ */
+    .chips {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 18px;
+    }
+    .chip {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      font-weight: 600; font-size: 15px;
+    }
+    .chip.alt {
+      background: transparent;
+      color: var(--ink);
+      border: 2px solid var(--ink);
+    }
+    .chip.warm { background: var(--pink); color: white; }
+    .chip.warm.alt { background: transparent; color: var(--pink); border-color: var(--pink); }
+
+    /* Sticker-style colorful chips (used in Fashion + Art for fun variety) */
+    .chips.fun .chip { border: none; color: white; }
+    .chips.fun .chip:nth-child(6n+1) { background: #ff3d8a; color: white; }
+    .chips.fun .chip:nth-child(6n+2) { background: #ffd23f; color: var(--ink); }
+    .chips.fun .chip:nth-child(6n+3) { background: #3ddca0; color: var(--ink); }
+    .chips.fun .chip:nth-child(6n+4) { background: #5cc8ff; color: var(--ink); }
+    .chips.fun .chip:nth-child(6n+5) { background: #8a4dff; color: white; }
+    .chips.fun .chip:nth-child(6n+6) { background: #ff7a3d; color: white; }
+
+    /* ---------- Tile grid (wars, tech) ------------------------ */
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .tiles.two { grid-template-columns: 1fr 1fr; }
+    .tile {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-soft);
+    }
+    .tile .em { font-size: 30px; }
+    .tile.character { text-align: center; padding: 22px 16px 18px; }
+    .tile.character .em {
+      width: 80px; height: 80px;
+      margin: 0 auto 10px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px -6px rgba(26,19,48,.25);
+    }
+    .tile.character .em svg {
+      width: 100%; height: 100%; display: block;
+    }
+    .tile .n {
+      font-family: "Fraunces", serif; font-weight: 900;
+      font-size: 22px; line-height: 1.1;
+      margin-top: 6px;
+    }
+    .tile .h {
+      font-size: 14px; color: var(--ink-2);
+      margin-top: 4px;
+    }
+    @media (max-width: 720px) {
+      .tiles, .tiles.two { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Feature card (logo + caption) ----------------- */
+    .feature-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 22px 16px 16px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      margin: 22px 0 4px;
+      box-shadow: var(--shadow-soft);
+    }
+    .feature-card .img {
+      width: 76px; height: 76px;
+      border-radius: 18px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px -6px rgba(26,19,48,.25);
+    }
+    .feature-card .img svg { width: 100%; height: 100%; display: block; }
+    .feature-card .ft {
+      font-family: "Fraunces", serif; font-weight: 900;
+      font-size: 22px; line-height: 1.05;
+    }
+    .feature-card .fcap {
+      font-size: 12px; font-weight: 700; color: var(--ink-2);
+      letter-spacing: .12em; text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ---------- Movie posters --------------------------------- */
+    .tickets {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .ticket {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+      transition: transform .15s ease;
+    }
+    .ticket:hover { transform: translateY(-3px); }
+    .ticket .poster {
+      aspect-ratio: 2 / 3;
+      background: #1a133010;
+      overflow: hidden;
+    }
+    .ticket .poster img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .ticket .info { padding: 12px 14px 16px; }
+    .ticket .ti {
+      font-family: "Fraunces", serif; font-weight: 900;
+      font-size: 18px; line-height: 1.15;
+    }
+    .ticket .yr {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ink-2);
+      margin-top: 6px;
+    }
+    @media (max-width: 720px) {
+      .tickets { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ---------- Quiz ------------------------------------------ */
+    .quiz {
+      margin-top: 28px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+    .quiz .qhead {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .quiz .qnum {
+      font-family: "Permanent Marker", cursive;
+      font-size: 18px; color: var(--ink-2);
+    }
+    .quiz .qscore {
+      font-weight: 700; font-size: 14px;
+      color: var(--ink-2);
+    }
+    .quiz .progress {
+      display: flex; gap: 6px; margin-bottom: 22px;
+    }
+    .quiz .progress span {
+      flex: 1; height: 6px; border-radius: 999px;
+      background: var(--line);
+    }
+    .quiz .progress span.done { background: var(--ink); }
+    .quiz .progress span.current { background: var(--pink); }
+
+    .quiz .question {
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+      font-size: clamp(22px, 2.6vw, 28px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .quiz .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .quiz .options button {
+      text-align: left;
+      background: var(--paper);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform .12s ease, background .12s ease;
+    }
+    .quiz .options button:hover:not(:disabled) {
+      transform: translateY(-2px);
+      background: white;
+    }
+    .quiz .options button.correct {
+      background: var(--mint);
+      border-color: var(--ink);
+    }
+    .quiz .options button.wrong {
+      background: #ff5e5e;
+      color: white;
+    }
+    .quiz .options button:disabled { cursor: default; }
+    .quiz .feedback {
+      margin-top: 14px;
+      min-height: 26px;
+      font-weight: 700; font-size: 16px;
+    }
+    .quiz .next {
+      margin-top: 14px;
+      background: var(--ink); color: var(--paper);
+      border: none;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-family: "Inter", sans-serif;
+      font-weight: 700; font-size: 15px;
+      cursor: pointer;
+    }
+    .quiz .next[hidden] { display: none; }
+
+    .quiz .scorecard {
+      text-align: center;
+      padding: 20px 0 8px;
+    }
+    .quiz .scorecard .big {
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      font-size: clamp(80px, 11vw, 140px);
+      line-height: 1;
+      letter-spacing: -.02em;
+    }
+    .quiz .scorecard .lbl {
+      font-family: "Permanent Marker", cursive;
+      color: var(--ink-2);
+      margin-bottom: 6px;
+    }
+    .quiz .scorecard .msg {
+      margin: 14px 0 6px;
+      font-size: 18px; font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+      .quiz .options { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Mode tabs (Quiz / Game) ----------------------- */
+    .mode-tabs {
+      display: inline-flex;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-soft);
+    }
+    .mode-tab {
+      border: none;
+      background: transparent;
+      padding: 10px 24px;
+      border-radius: 999px;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--ink-2);
+      cursor: pointer;
+      transition: all .15s ease;
+    }
+    .mode-tab:hover { color: var(--ink); }
+    .mode-tab.active {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    /* ---------- Game stage (Kahoot-style) --------------------- */
+    .game-stage {
+      position: relative;
+      background: linear-gradient(135deg, #1a1330 0%, #46286b 60%, #8a4dff 100%);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 36px 36px 32px;
+      min-height: 520px;
+      overflow: hidden;
+      box-shadow: 0 18px 50px -22px rgba(26,19,48,.55);
+    }
+    .game-stage::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 80% -20%, #ff3d8a55 0%, transparent 50%),
+        radial-gradient(circle at -10% 110%, #5cc8ff44 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .game-topbar {
+      position: relative;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 14px; margin-bottom: 18px;
+      font-weight: 700; font-size: 14px;
+    }
+    .game-topbar .qcount { letter-spacing: .14em; text-transform: uppercase; opacity: .85; }
+    .game-topbar .gscore {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 6px 14px; border-radius: 999px;
+      font-weight: 800;
+    }
+    .sound-btn {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      color: white;
+      padding: 6px 12px; border-radius: 999px;
+      font-family: inherit; font-weight: 700; font-size: 13px;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .sound-btn:hover { background: rgba(255,255,255,.22); }
+    .sound-btn.on { background: var(--mint); color: var(--ink); border-color: transparent; }
+
+    .game-timer {
+      position: relative;
+      height: 12px; border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .game-timer-fill {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, var(--mint) 0%, var(--sun) 70%, var(--pink) 100%);
+      transform-origin: left;
+      transition: transform 1s linear;
+    }
+    .game-timer.urgent .game-timer-fill {
+      background: var(--pink);
+      animation: urgentPulse 0.6s ease-in-out infinite;
+    }
+    @keyframes urgentPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .55; }
+    }
+    .game-time-num {
+      position: absolute; right: 0; top: -28px;
+      font-family: "Fraunces", serif; font-weight: 900;
+      font-size: 28px;
+    }
+
+    .game-question {
+      position: relative;
+      font-family: "Fraunces", serif; font-weight: 900;
+      font-size: clamp(28px, 3.6vw, 44px);
+      line-height: 1.15;
+      text-align: center;
+      margin: 12px auto 32px;
+      max-width: 780px;
+      animation: gFadeUp .4s ease-out;
+    }
+    @keyframes gFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .game-answers {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .game-answer {
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+      text-align: left;
+      color: white;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: clamp(15px, 1.6vw, 19px);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 6px 0 0 rgba(0,0,0,.2);
+      animation: gFadeUp .4s ease-out backwards, gFloat 3.6s ease-in-out infinite alternate;
+    }
+    /* Each card gets a different fade-in delay AND a different float rhythm
+       so they never bob in sync — feels alive, not robotic. */
+    .game-answer:nth-child(1) { animation-delay: .05s, .4s;  animation-duration: .4s, 3.4s; }
+    .game-answer:nth-child(2) { animation-delay: .12s, 1.0s; animation-duration: .4s, 3.8s; }
+    .game-answer:nth-child(3) { animation-delay: .19s, .2s;  animation-duration: .4s, 4.2s; }
+    .game-answer:nth-child(4) { animation-delay: .26s, 1.4s; animation-duration: .4s, 3.6s; }
+    .game-answer:hover:not(:disabled) {
+      box-shadow: 0 10px 0 0 rgba(0,0,0,.25), 0 0 24px rgba(255,255,255,.18);
+      filter: brightness(1.08);
+    }
+    .game-answer:disabled { cursor: default; }
+    .game-answer .shape {
+      width: 46px; height: 46px;
+      flex-shrink: 0;
+      display: grid; place-items: center;
+      filter: drop-shadow(0 2px 0 rgba(0,0,0,.25));
+      animation: gMascotIdle 3s ease-in-out infinite;
+    }
+    .game-answer:nth-child(1) .shape { animation-delay: .2s;  }
+    .game-answer:nth-child(2) .shape { animation-delay: 1.4s; }
+    .game-answer:nth-child(3) .shape { animation-delay: .8s;  }
+    .game-answer:nth-child(4) .shape { animation-delay: 2.0s; }
+    .game-answer:hover:not(:disabled) .shape {
+      animation: gMascotHover .55s ease-out;
+    }
+    @keyframes gFloat {
+      0%   { transform: translateY(0)    rotate(-.4deg); }
+      100% { transform: translateY(-7px) rotate( .4deg); }
+    }
+    @keyframes gMascotIdle {
+      0%, 70%, 100% { transform: scale(1)    rotate(0); }
+      82%           { transform: scale(1.06) rotate(-5deg); }
+      90%           { transform: scale(1.04) rotate(4deg); }
+    }
+    @keyframes gMascotHover {
+      0%   { transform: scale(1)    rotate(0); }
+      35%  { transform: scale(1.22) rotate(-12deg); }
+      65%  { transform: scale(1.12) rotate(8deg); }
+      100% { transform: scale(1.08) rotate(0); }
+    }
+    .game-answer.red    { background: #E21B3C; }
+    .game-answer.blue   { background: #1368CE; }
+    .game-answer.yellow { background: #D89E00; }
+    .game-answer.green  { background: #26890C; }
+
+    .game-answer.correct {
+      animation: gCorrect .5s ease-in-out 2;
+      box-shadow: 0 0 0 4px white, 0 0 32px rgba(255,255,255,.6);
+    }
+    .game-answer.faded { opacity: .35; }
+    .game-answer.wrong-pick { animation: gShake .4s ease-in-out; }
+
+    @keyframes gCorrect {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+    @keyframes gShake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+
+    /* Game start screen */
+    .game-start {
+      position: relative;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .game-start h3 {
+      font-family: "Fraunces", serif; font-weight: 900;
+      font-size: clamp(48px, 7vw, 80px);
+      line-height: 1; margin: 0 0 12px;
+      letter-spacing: -.02em;
+    }
+    .game-start h3 em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--pink), var(--sun));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .game-start p { font-size: 18px; opacity: .85; max-width: 420px; margin: 0 auto 28px; }
+    .game-start-btn {
+      background: var(--pink); color: white;
+      border: none;
+      padding: 18px 40px;
+      border-radius: 999px;
+      font-family: "Inter", sans-serif;
+      font-weight: 800; font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 6px 0 0 #c1276a;
+      transition: transform .12s ease;
+    }
+    .game-start-btn:hover { transform: translateY(-2px); }
+    .game-start-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 0 #c1276a; }
+
+    /* Game reveal screen between questions */
+    .game-reveal {
+      position: relative;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .game-reveal .verdict {
+      font-family: "Fraunces", serif; font-weight: 900;
+      font-size: clamp(60px, 10vw, 120px);
+      line-height: 1; margin: 0;
+      letter-spacing: -.02em;
+      animation: gPop .5s cubic-bezier(.2,1.5,.3,1);
+    }
+    .game-reveal .verdict.right { color: var(--mint); }
+    .game-reveal .verdict.wrong { color: var(--pink); }
+    .game-reveal .verdict.timeup { color: var(--sun); }
+    .game-reveal .answer-was {
+      margin-top: 18px;
+      font-size: 18px; opacity: .9;
+    }
+    .game-reveal .answer-was strong { color: var(--sun); }
+    @keyframes gPop {
+      0% { transform: scale(.6); opacity: 0; }
+      60% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    /* End screen */
+    .game-end {
+      position: relative;
+      text-align: center;
+      padding: 30px 20px 20px;
+    }
+    .game-end .glabel {
+      font-family: "Permanent Marker", cursive;
+      font-size: 22px; opacity: .85;
+    }
+    .game-end .gbig {
+      font-family: "Fraunces", serif; font-weight: 900;
+      font-size: clamp(100px, 16vw, 200px);
+      line-height: .95;
+      letter-spacing: -.03em;
+      background: linear-gradient(180deg, var(--sun) 0%, var(--pink) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: gPop .6s cubic-bezier(.2,1.5,.3,1);
+    }
+    .game-end .gmsg {
+      font-size: 22px; font-weight: 700;
+      margin: 12px 0 26px;
+    }
+    .game-end .gactions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .game-end .gbtn {
+      background: white; color: var(--ink);
+      border: none;
+      padding: 14px 28px; border-radius: 999px;
+      font-family: inherit; font-weight: 800; font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 0 0 rgba(0,0,0,.25);
+    }
+    .game-end .gbtn:hover { transform: translateY(-1px); }
+    .game-end .gbtn.ghost {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,.3);
+      box-shadow: none;
+    }
+
+    /* Ambient background sparkles — drift up from the bottom of the stage */
+    .sparkle-layer {
+      position: absolute; inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .sparkle {
+      position: absolute;
+      bottom: -10px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 0 10px rgba(255,255,255,.7);
+      animation: gSparkleRise linear infinite;
+    }
+    @keyframes gSparkleRise {
+      0%   { transform: translateY(0)     scale(0);   opacity: 0; }
+      12%  { transform: translateY(-30px) scale(1);   opacity: 1; }
+      88%  { transform: translateY(-540px) scale(.8); opacity: .8; }
+      100% { transform: translateY(-580px) scale(.4); opacity: 0; }
+    }
+    /* Make sure foreground content stays above the sparkles */
+    .game-topbar, .game-timer, .game-question, .game-answers,
+    .game-start, .game-reveal, .game-end { position: relative; z-index: 1; }
+
+    /* Confetti */
+    .confetti-piece {
+      position: absolute;
+      top: -20px;
+      width: 10px; height: 14px;
+      pointer-events: none;
+      z-index: 5;
+      animation: gConfetti linear forwards;
+    }
+    @keyframes gConfetti {
+      0%   { transform: translateY(-20px) rotate(0); opacity: 1; }
+      100% { transform: translateY(620px) rotate(720deg); opacity: .2; }
+    }
+
+    @media (max-width: 640px) {
+      .game-answers { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Footer ---------------------------------------- */
+    footer {
+      margin-top: 96px;
+      padding: 56px 0 64px;
+      background:
+        radial-gradient(ellipse at 50% 100%, #ff3d8a25 0%, transparent 50%),
+        var(--paper);
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+    footer h4 {
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      font-size: clamp(40px, 6vw, 64px);
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    footer h4 em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--pink), var(--hot));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    footer p { color: var(--ink-2); margin-top: 12px; }
+
+    /* ---------- Icons (SVG, no emojis) ------------------------ */
+    .icon {
+      display: inline-block;
+      width: 22px; height: 22px;
+      stroke: currentColor; fill: none;
+      stroke-width: 2;
+      stroke-linecap: round; stroke-linejoin: round;
+      vertical-align: -5px;
+      flex-shrink: 0;
+    }
+    .icon-lg  { width: 96px; height: 96px; stroke-width: 1.5; }
+    .icon-md  { width: 30px; height: 30px; stroke-width: 1.7; vertical-align: middle; }
+    .icon-sm  { width: 16px; height: 16px; vertical-align: -3px; margin-right: 4px; }
+
+    .icon-feedback {
+      width: 22px; height: 22px;
+      vertical-align: -5px;
+      margin-right: 6px;
+    }
+
+    /* On gradient/colored backgrounds we want the icon to stand out */
+    .pic .icon { color: white; }
+
+    /* ---------- Print friendly -------------------------------- */
+    @media print {
+      .topbar, .quiz .next, .quiz .options { display: revert; }
+      body { background: white; }
+      .hero, footer { background: white; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== ICON LIBRARY =================
+       Hidden SVG symbol set. Reused everywhere via <use href="#icon-*"/>
+       Line-art style, currentColor stroke.
+       ==================================================== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="icon-mic" viewBox="0 0 24 24">
+        <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3z"/>
+        <path d="M19 11a7 7 0 0 1-14 0"/>
+        <line x1="12" y1="18" x2="12" y2="22"/>
+        <line x1="9"  y1="22" x2="15" y2="22"/>
+      </symbol>
+      <symbol id="icon-note" viewBox="0 0 24 24">
+        <path d="M9 18V5l12-2v13"/>
+        <circle cx="6"  cy="18" r="3"/>
+        <circle cx="18" cy="16" r="3"/>
+      </symbol>
+      <symbol id="icon-star" viewBox="0 0 24 24">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <rect x="6" y="2" width="12" height="20" rx="2"/>
+        <line x1="11" y1="18" x2="13" y2="18"/>
+      </symbol>
+      <symbol id="icon-tablet" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <line x1="11" y1="18" x2="13" y2="18"/>
+      </symbol>
+      <symbol id="icon-chip" viewBox="0 0 24 24">
+        <rect x="4" y="4" width="16" height="16" rx="2"/>
+        <rect x="9" y="9" width="6"  height="6"/>
+        <line x1="9"  y1="2"  x2="9"  y2="4"/>
+        <line x1="15" y1="2"  x2="15" y2="4"/>
+        <line x1="9"  y1="20" x2="9"  y2="22"/>
+        <line x1="15" y1="20" x2="15" y2="22"/>
+        <line x1="20" y1="9"  x2="22" y2="9"/>
+        <line x1="20" y1="15" x2="22" y2="15"/>
+        <line x1="2"  y1="9"  x2="4"  y2="9"/>
+        <line x1="2"  y1="15" x2="4"  y2="15"/>
+      </symbol>
+      <symbol id="icon-mountain" viewBox="0 0 24 24">
+        <path d="M3 20 L9 8 L13 14 L17 6 L21 20 Z"/>
+      </symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4"/>
+        <line x1="12" y1="2"    x2="12" y2="4"/>
+        <line x1="12" y1="20"   x2="12" y2="22"/>
+        <line x1="2"  y1="12"   x2="4"  y2="12"/>
+        <line x1="20" y1="12"   x2="22" y2="12"/>
+        <line x1="4.93"  y1="4.93"  x2="6.34"  y2="6.34"/>
+        <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/>
+        <line x1="4.93"  y1="19.07" x2="6.34"  y2="17.66"/>
+        <line x1="17.66" y1="6.34"  x2="19.07" y2="4.93"/>
+      </symbol>
+      <symbol id="icon-camera" viewBox="0 0 24 24">
+        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+        <circle cx="12" cy="13" r="4"/>
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"/>
+      </symbol>
+      <symbol id="icon-x" viewBox="0 0 24 24">
+        <line x1="18" y1="6"  x2="6"  y2="18"/>
+        <line x1="6"  y1="6"  x2="18" y2="18"/>
+      </symbol>
+      <symbol id="icon-trophy" viewBox="0 0 24 24">
+        <path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2"/>
+        <path d="M18 9h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"/>
+        <path d="M6 3v6a6 6 0 0 0 12 0V3z"/>
+        <line x1="12" y1="15" x2="12" y2="19"/>
+        <line x1="8"  y1="22" x2="16" y2="22"/>
+      </symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </symbol>
+      <symbol id="icon-refresh" viewBox="0 0 24 24">
+        <polyline points="23 4 23 10 17 10"/>
+        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+      </symbol>
+      <symbol id="icon-volume" viewBox="0 0 24 24">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+      </symbol>
+      <symbol id="icon-volume-off" viewBox="0 0 24 24">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/>
+        <line x1="22" y1="9" x2="16" y2="15"/>
+        <line x1="16" y1="9" x2="22" y2="15"/>
+      </symbol>
+
+      <!-- ===== GAME ANSWER MASCOTS =====
+           Same Kahoot-shape language (triangle/diamond/circle/square),
+           but each one is a cute character. White shape with the
+           button color showing through the face details. -->
+      <symbol id="game-red" viewBox="0 0 100 100">
+        <polygon points="50 10 92 86 8 86" fill="white"/>
+        <circle cx="40" cy="58" r="6" fill="#E21B3C"/>
+        <circle cx="60" cy="58" r="6" fill="#E21B3C"/>
+        <circle cx="40" cy="59" r="3" fill="#1a1330"/>
+        <circle cx="60" cy="59" r="3" fill="#1a1330"/>
+        <circle cx="41" cy="58" r="1" fill="white"/>
+        <circle cx="61" cy="58" r="1" fill="white"/>
+        <path d="M40 72 Q50 80 60 72" stroke="#E21B3C" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="game-blue" viewBox="0 0 100 100">
+        <polygon points="50 8 92 50 50 92 8 50" fill="white"/>
+        <circle cx="40" cy="46" r="6" fill="#1368CE"/>
+        <circle cx="60" cy="46" r="6" fill="#1368CE"/>
+        <circle cx="40" cy="47" r="3" fill="#1a1330"/>
+        <circle cx="60" cy="47" r="3" fill="#1a1330"/>
+        <circle cx="41" cy="46" r="1" fill="white"/>
+        <circle cx="61" cy="46" r="1" fill="white"/>
+        <path d="M40 60 Q50 68 60 60" stroke="#1368CE" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="50" cy="22" r="2" fill="#1368CE" opacity=".5"/>
+      </symbol>
+      <symbol id="game-yellow" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="42" fill="white"/>
+        <circle cx="40" cy="44" r="5" fill="#1a1330"/>
+        <circle cx="60" cy="44" r="5" fill="#1a1330"/>
+        <circle cx="41" cy="43" r="1.6" fill="white"/>
+        <circle cx="61" cy="43" r="1.6" fill="white"/>
+        <path d="M38 58 Q50 70 62 58 Q60 66 50 66 Q40 66 38 58 Z" fill="#1a1330"/>
+        <path d="M44 64 Q50 67 56 64 Q53 65 50 65 Q47 65 44 64 Z" fill="#FF6B8E"/>
+        <circle cx="28" cy="56" r="5" fill="#FF8FA3" opacity=".55"/>
+        <circle cx="72" cy="56" r="5" fill="#FF8FA3" opacity=".55"/>
+      </symbol>
+      <symbol id="game-green" viewBox="0 0 100 100">
+        <rect x="8" y="8" width="84" height="84" rx="14" fill="white"/>
+        <circle cx="40" cy="46" r="6" fill="#26890C"/>
+        <circle cx="60" cy="46" r="6" fill="#26890C"/>
+        <circle cx="40" cy="47" r="3" fill="#1a1330"/>
+        <circle cx="60" cy="47" r="3" fill="#1a1330"/>
+        <circle cx="41" cy="46" r="1" fill="white"/>
+        <circle cx="61" cy="46" r="1" fill="white"/>
+        <path d="M40 62 Q50 70 60 62" stroke="#26890C" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </symbol>
+
+      <!-- ===== PER-QUESTION CARTOON AVATARS =====
+           Each game answer can have its own cartoon mascot (referenced by id
+           in the QUIZ data). When omitted, the default red/blue/yellow/green
+           Kahoot mascots are used. Style: rounded-square sticker bg + simple
+           cartoon, ~3-color palette, recognizable at 46px. -->
+
+      <!-- Presidents -->
+      <symbol id="game-trump" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FFE4E6"/>
+        <path d="M22 88 L22 78 Q34 70 50 70 Q66 70 78 78 L78 88 Z" fill="#1a3a5c"/>
+        <path d="M40 70 L40 88 L60 88 L60 70 Z" fill="white"/>
+        <polygon points="50 70 45 88 50 92 55 88" fill="#E63946"/>
+        <rect x="44" y="62" width="12" height="10" fill="#FAB893"/>
+        <ellipse cx="50" cy="46" rx="18" ry="22" fill="#FAB893"/>
+        <path d="M28 36 Q30 16 56 18 Q70 22 72 32 Q66 28 56 28 Q42 26 32 32 Q30 34 28 36 Z" fill="#F4C77B"/>
+        <ellipse cx="42" cy="46" rx="2" ry="1.8" fill="#1a1330"/>
+        <ellipse cx="58" cy="46" rx="2" ry="1.8" fill="#1a1330"/>
+        <ellipse cx="50" cy="58" rx="6" ry="2.5" fill="#1a1330"/>
+      </symbol>
+      <symbol id="game-obama" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#E0F2FE"/>
+        <path d="M22 88 L22 78 Q34 70 50 70 Q66 70 78 78 L78 88 Z" fill="#1a1330"/>
+        <path d="M40 70 L40 88 L60 88 L60 70 Z" fill="white"/>
+        <polygon points="50 70 46 88 50 92 54 88" fill="#5B7AAA"/>
+        <rect x="44" y="62" width="12" height="10" fill="#7C5444"/>
+        <ellipse cx="50" cy="46" rx="18" ry="22" fill="#7C5444"/>
+        <path d="M30 34 Q30 22 50 22 Q70 22 70 34 Q66 30 60 30 Q50 28 40 30 Q34 30 30 34 Z" fill="#1a1330"/>
+        <ellipse cx="42" cy="46" rx="2.5" ry="2" fill="#1a1330"/>
+        <ellipse cx="58" cy="46" rx="2.5" ry="2" fill="#1a1330"/>
+        <ellipse cx="32" cy="50" rx="3" ry="5" fill="#7C5444"/>
+        <ellipse cx="68" cy="50" rx="3" ry="5" fill="#7C5444"/>
+        <path d="M40 56 Q50 64 60 56 Q58 60 50 60 Q42 60 40 56 Z" fill="#1a1330"/>
+        <path d="M44 58 Q50 60 56 58 Q54 60 50 60 Q46 60 44 58 Z" fill="white"/>
+      </symbol>
+      <symbol id="game-bush" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FEF3C7"/>
+        <path d="M22 88 L22 78 Q34 70 50 70 Q66 70 78 78 L78 88 Z" fill="#2c2c2c"/>
+        <path d="M40 70 L40 88 L60 88 L60 70 Z" fill="white"/>
+        <polygon points="50 70 46 88 50 92 54 88" fill="#9C1F2A"/>
+        <rect x="44" y="62" width="12" height="10" fill="#F0C9A4"/>
+        <ellipse cx="50" cy="46" rx="17" ry="21" fill="#F0C9A4"/>
+        <path d="M30 32 Q34 22 50 22 Q66 22 70 32 Q60 30 56 32 Q50 30 44 32 Q36 32 30 32 Z" fill="#A8A8A8"/>
+        <ellipse cx="33" cy="48" rx="3" ry="5" fill="#F0C9A4"/>
+        <ellipse cx="67" cy="48" rx="3" ry="5" fill="#F0C9A4"/>
+        <ellipse cx="42" cy="46" rx="2" ry="2" fill="#1a1330"/>
+        <ellipse cx="58" cy="46" rx="2" ry="2" fill="#1a1330"/>
+        <path d="M42 56 Q50 60 58 56" stroke="#1a1330" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="game-biden" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#DCFCE7"/>
+        <path d="M22 88 L22 78 Q34 70 50 70 Q66 70 78 78 L78 88 Z" fill="#1a3a5c"/>
+        <path d="M40 70 L40 88 L60 88 L60 70 Z" fill="white"/>
+        <polygon points="50 70 46 88 50 92 54 88" fill="#1368CE"/>
+        <rect x="44" y="62" width="12" height="10" fill="#FAD9C0"/>
+        <ellipse cx="50" cy="46" rx="17" ry="21" fill="#FAD9C0"/>
+        <path d="M30 32 Q34 22 50 22 Q66 22 70 32 Q60 30 50 30 Q40 30 30 32 Z" fill="#F0F0F0"/>
+        <ellipse cx="33" cy="48" rx="3" ry="5" fill="#FAD9C0"/>
+        <ellipse cx="67" cy="48" rx="3" ry="5" fill="#FAD9C0"/>
+        <circle cx="42" cy="46" r="6" fill="#1a1330"/>
+        <circle cx="58" cy="46" r="6" fill="#1a1330"/>
+        <line x1="48" y1="46" x2="52" y2="46" stroke="#1a1330" stroke-width="1.5"/>
+        <circle cx="40" cy="44" r="1" fill="white"/>
+        <circle cx="56" cy="44" r="1" fill="white"/>
+        <path d="M42 58 Q50 62 58 58" stroke="#1a1330" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </symbol>
+
+      <!-- Healthcare laws -->
+      <symbol id="game-medicare" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#E0F2FE"/>
+        <circle cx="50" cy="50" r="32" fill="white" stroke="#5B7AAA" stroke-width="3"/>
+        <rect x="42" y="30" width="16" height="40" rx="3" fill="#E63946"/>
+        <rect x="30" y="42" width="40" height="16" rx="3" fill="#E63946"/>
+      </symbol>
+      <symbol id="game-aca" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#DCFCE7"/>
+        <path d="M50 80 L25 60 Q15 50 22 38 Q30 26 42 32 Q48 35 50 42 Q52 35 58 32 Q70 26 78 38 Q85 50 75 60 Z" fill="#E63946"/>
+        <circle cx="50" cy="50" r="9" fill="white"/>
+        <rect x="48" y="44" width="4" height="12" rx="1" fill="#E63946"/>
+        <rect x="44" y="48" width="12" height="4" rx="1" fill="#E63946"/>
+      </symbol>
+      <symbol id="game-ssn" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FEF3C7"/>
+        <path d="M20 56 Q15 60 17 64 L22 66 Q22 76 30 80 L70 80 Q80 76 84 66 Q88 60 84 54 Q88 44 80 38 L80 30 Q72 36 70 36 Q60 30 50 30 Q35 30 25 40 Q18 46 20 56 Z" fill="#FF9FBA"/>
+        <circle cx="36" cy="50" r="2.5" fill="#1a1330"/>
+        <ellipse cx="22" cy="48" rx="3" ry="2" fill="#FF7A9D"/>
+        <rect x="46" y="36" width="12" height="3" rx="1" fill="#FFD23F"/>
+        <rect x="60" y="80" width="4" height="6" fill="#FF9FBA"/>
+        <rect x="36" y="80" width="4" height="6" fill="#FF9FBA"/>
+      </symbol>
+      <symbol id="game-patriot" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FFE4E6"/>
+        <path d="M50 18 L78 28 L78 56 Q78 76 50 86 Q22 76 22 56 L22 28 Z" fill="white" stroke="#1a3a5c" stroke-width="2"/>
+        <path d="M22 28 L78 28 L78 44 L22 44 Z" fill="#1a3a5c"/>
+        <path d="M22 48 L78 48 L78 51 L22 51 Z M22 54 L78 54 L78 57 L22 57 Z M22 60 L78 60 L78 63 L22 63 Z" fill="#E63946"/>
+        <circle cx="32" cy="36" r="1.2" fill="white"/>
+        <circle cx="40" cy="36" r="1.2" fill="white"/>
+        <circle cx="48" cy="36" r="1.2" fill="white"/>
+        <circle cx="56" cy="36" r="1.2" fill="white"/>
+        <circle cx="64" cy="36" r="1.2" fill="white"/>
+      </symbol>
+
+      <!-- Apple devices -->
+      <symbol id="game-ipod" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#F1F5F9"/>
+        <rect x="30" y="14" width="40" height="72" rx="6" fill="white" stroke="#1a1330" stroke-width="2"/>
+        <rect x="34" y="20" width="32" height="22" fill="#1a1330"/>
+        <rect x="36" y="22" width="6" height="3" fill="#5BC0F8"/>
+        <circle cx="50" cy="64" r="14" fill="none" stroke="#1a1330" stroke-width="2"/>
+        <circle cx="50" cy="64" r="4" fill="#1a1330"/>
+      </symbol>
+      <symbol id="game-applewatch" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FFE4E6"/>
+        <path d="M36 12 L36 26 L34 32 L34 68 L36 74 L36 88 L64 88 L64 74 L66 68 L66 32 L64 26 L64 12 Z" fill="#1a1330"/>
+        <rect x="34" y="32" width="32" height="36" rx="4" fill="#FF3D8A"/>
+        <circle cx="50" cy="46" r="4" fill="white"/>
+        <path d="M44 56 Q50 62 56 56" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="game-macbookair" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#F1F5F9"/>
+        <rect x="20" y="22" width="60" height="42" rx="3" fill="#1a1330"/>
+        <rect x="23" y="25" width="54" height="36" fill="#5BC0F8"/>
+        <circle cx="50" cy="43" r="5" fill="white" opacity=".6"/>
+        <path d="M14 64 L86 64 L82 76 L18 76 Z" fill="#C8CDD3"/>
+        <rect x="44" y="65" width="12" height="3" rx="1" fill="#1a1330" opacity=".3"/>
+      </symbol>
+
+      <!-- Beyoncé (other singers reuse char-gaga, char-bieber, char-swift) -->
+      <symbol id="game-beyonce" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FEF3C7"/>
+        <path d="M22 35 Q18 70 24 95 L40 95 Q35 75 32 60 Q30 45 36 35 Q42 25 50 22 Q58 25 64 35 Q70 45 68 60 Q65 75 60 95 L76 95 Q82 70 78 35 Q75 12 50 12 Q25 12 22 35 Z" fill="#7C5444"/>
+        <ellipse cx="50" cy="50" rx="17" ry="20" fill="#A87459"/>
+        <path d="M34 38 Q40 28 50 30 Q60 28 66 38 Q60 35 52 36 Q44 35 34 38 Z" fill="#7C5444"/>
+        <ellipse cx="43" cy="48" rx="2" ry="2" fill="#1a1330"/>
+        <ellipse cx="57" cy="48" rx="2" ry="2" fill="#1a1330"/>
+        <line x1="40" y1="45" x2="46" y2="45" stroke="#1a1330" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="54" y1="45" x2="60" y2="45" stroke="#1a1330" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M44 60 Q50 57 56 60 Q53 65 50 65 Q47 65 44 60 Z" fill="#E63946"/>
+        <circle cx="36" cy="22" r="3" fill="#FFD23F"/>
+        <circle cx="64" cy="22" r="3" fill="#FFD23F"/>
+      </symbol>
+
+      <!-- Movies -->
+      <symbol id="game-frozen" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#E0F2FE"/>
+        <line x1="50" y1="14" x2="50" y2="86" stroke="#5BC0F8" stroke-width="4" stroke-linecap="round"/>
+        <line x1="14" y1="50" x2="86" y2="50" stroke="#5BC0F8" stroke-width="4" stroke-linecap="round"/>
+        <line x1="24" y1="24" x2="76" y2="76" stroke="#5BC0F8" stroke-width="4" stroke-linecap="round"/>
+        <line x1="76" y1="24" x2="24" y2="76" stroke="#5BC0F8" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="9" fill="white"/>
+        <circle cx="50" cy="50" r="5" fill="#5BC0F8"/>
+      </symbol>
+      <symbol id="game-toystory" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FFE4E6"/>
+        <ellipse cx="50" cy="68" rx="36" ry="6" fill="#8B5A2B"/>
+        <path d="M28 64 Q28 42 50 38 Q72 42 72 64 L66 64 Q66 50 50 48 Q34 50 34 64 Z" fill="#8B5A2B"/>
+        <rect x="34" y="60" width="32" height="5" rx="2" fill="#5C3A21"/>
+        <circle cx="50" cy="62" r="2.5" fill="#FFD23F"/>
+      </symbol>
+      <symbol id="game-tangled" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#EDE9FE"/>
+        <circle cx="50" cy="50" r="22" fill="#FFD23F"/>
+        <path d="M50 8 L52 24 L48 24 Z" fill="#FFD23F"/>
+        <path d="M50 92 L52 76 L48 76 Z" fill="#FFD23F"/>
+        <path d="M8 50 L24 52 L24 48 Z" fill="#FFD23F"/>
+        <path d="M92 50 L76 52 L76 48 Z" fill="#FFD23F"/>
+        <path d="M20 20 L32 30 L30 32 Z" fill="#FFD23F"/>
+        <path d="M80 80 L70 70 L72 68 Z" fill="#FFD23F"/>
+        <path d="M80 20 L68 30 L70 32 Z" fill="#FFD23F"/>
+        <path d="M20 80 L32 70 L30 68 Z" fill="#FFD23F"/>
+        <circle cx="44" cy="46" r="2" fill="#1a1330"/>
+        <circle cx="56" cy="46" r="2" fill="#1a1330"/>
+        <path d="M44 56 Q50 60 56 56" stroke="#1a1330" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="game-findingdory" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#DCFCE7"/>
+        <ellipse cx="50" cy="52" rx="28" ry="20" fill="#1368CE"/>
+        <path d="M22 52 L8 40 L8 64 Z" fill="#1368CE"/>
+        <path d="M50 36 Q60 30 64 38 Q56 38 50 40 Z" fill="#FFD23F"/>
+        <path d="M50 70 Q56 64 64 68 Q56 70 52 72 Z" fill="#FFD23F"/>
+        <ellipse cx="68" cy="48" rx="3.5" ry="3.5" fill="white"/>
+        <circle cx="68" cy="48" r="1.7" fill="#1a1330"/>
+        <path d="M64 56 Q70 60 76 56" stroke="#1a1330" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </symbol>
+
+      <!-- Social media -->
+      <symbol id="game-tiktok" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#1a1330"/>
+        <path d="M44 22 L44 60 Q44 70 36 70 Q28 70 28 60 Q28 52 36 52" stroke="#5CC8FF" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M48 22 L48 60 Q48 70 40 70 Q32 70 32 60 Q32 52 40 52" stroke="#FF3D8A" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M46 22 L46 60 Q46 70 38 70 Q30 70 30 60 Q30 52 38 52" stroke="white" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M46 22 Q56 32 64 28" stroke="white" stroke-width="6" fill="none" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="game-snapchat" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FFD23F"/>
+        <path d="M50 20 Q72 20 72 42 L72 64 L78 70 L74 76 L66 76 Q60 84 50 84 Q40 84 34 76 L26 76 L22 70 L28 64 L28 42 Q28 20 50 20 Z" fill="white"/>
+        <circle cx="42" cy="48" r="2.5" fill="#1a1330"/>
+        <circle cx="58" cy="48" r="2.5" fill="#1a1330"/>
+        <ellipse cx="50" cy="60" rx="4" ry="2" fill="#FF6B8E"/>
+      </symbol>
+      <symbol id="game-twitter" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#E0F2FE"/>
+        <path d="M82 34 Q78 38 74 38 Q70 32 64 32 Q56 32 54 40 Q54 44 58 46 Q44 46 32 38 Q30 46 36 52 Q32 52 28 50 Q28 58 38 62 Q34 64 30 62 Q34 70 44 70 Q34 76 22 76 Q40 86 58 82 Q78 78 78 58 Q78 52 78 48 Q82 44 82 40 Q80 42 78 42 Q82 36 82 34 Z" fill="#5CC8FF"/>
+      </symbol>
+
+      <!-- Bracelets -->
+      <symbol id="game-sillybandz" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FFEDD5"/>
+        <path d="M16 64 Q14 56 20 50 Q26 46 32 50 Q34 42 42 40 Q50 40 52 48 Q56 38 64 38 Q72 40 72 50 Q78 52 80 60 Q82 68 76 72 L70 70 Q68 76 64 76 L60 70 L48 70 L46 76 Q42 76 40 72 L36 76 Q32 76 28 72 Q22 72 18 68 Z" fill="#FF3D8A" stroke="#1a1330" stroke-width="2"/>
+        <circle cx="62" cy="48" r="1.5" fill="#1a1330"/>
+      </symbol>
+      <symbol id="game-livestrong" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#F1F5F9"/>
+        <path d="M14 50 Q14 38 50 38 Q86 38 86 50 Q86 62 50 62 Q14 62 14 50 Z" fill="#FFD23F" stroke="#D89E00" stroke-width="2"/>
+        <path d="M22 50 L26 50 M30 50 L34 50 M38 50 L42 50 M46 50 L54 50 M58 50 L62 50 M66 50 L70 50 M74 50 L78 50" stroke="#D89E00" stroke-width="1.5" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="game-friendship" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FFE4E6"/>
+        <path d="M14 50 Q14 38 50 38 Q86 38 86 50 Q86 62 50 62 Q14 62 14 50 Z" fill="#1a1330"/>
+        <rect x="18" y="40" width="6" height="20" fill="#FF3D8A"/>
+        <rect x="24" y="40" width="6" height="20" fill="#FFD23F"/>
+        <rect x="30" y="40" width="6" height="20" fill="#3DDCA0"/>
+        <rect x="36" y="40" width="6" height="20" fill="#5CC8FF"/>
+        <rect x="42" y="40" width="6" height="20" fill="#8A4DFF"/>
+        <rect x="48" y="40" width="6" height="20" fill="#FF7A3D"/>
+        <rect x="54" y="40" width="6" height="20" fill="#FF3D8A"/>
+        <rect x="60" y="40" width="6" height="20" fill="#FFD23F"/>
+        <rect x="66" y="40" width="6" height="20" fill="#3DDCA0"/>
+        <rect x="72" y="40" width="6" height="20" fill="#5CC8FF"/>
+        <rect x="78" y="40" width="6" height="20" fill="#8A4DFF"/>
+        <path d="M14 50 Q14 38 50 38 Q86 38 86 50 Q86 62 50 62 Q14 62 14 50 Z" fill="none" stroke="#1a1330" stroke-width="2"/>
+      </symbol>
+      <symbol id="game-slap" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#DCFCE7"/>
+        <path d="M16 48 Q24 30 40 30 Q56 30 60 46 Q62 56 56 60 Q48 62 46 54 Q46 48 50 48" stroke="#5CC8FF" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path d="M50 48 L70 48 Q80 50 80 60 Q80 70 70 72 Q62 72 60 66" stroke="#5CC8FF" stroke-width="8" fill="none" stroke-linecap="round"/>
+      </symbol>
+
+      <!-- Wars / country pairs (symbolic, non-political) -->
+      <symbol id="game-koreavietnam" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#DCFCE7"/>
+        <path d="M22 56 Q22 32 50 30 Q78 32 78 56 L78 64 L22 64 Z" fill="#3D5A2B"/>
+        <rect x="16" y="58" width="68" height="8" rx="3" fill="#2c3a1f"/>
+        <circle cx="50" cy="46" r="6" fill="#FFD23F"/>
+        <polygon points="50 42 51 45 54 45 52 47 53 50 50 49 47 50 48 47 46 45 49 45" fill="#3D5A2B"/>
+      </symbol>
+      <symbol id="game-afghaniraq" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FEF3C7"/>
+        <circle cx="72" cy="32" r="14" fill="#FFD23F"/>
+        <line x1="72" y1="14" x2="72" y2="20" stroke="#FFD23F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="58" y1="32" x2="62" y2="32" stroke="#FFD23F" stroke-width="2" stroke-linecap="round"/>
+        <path d="M14 80 L34 50 L46 64 L62 40 L86 80 Z" fill="#7C5444"/>
+        <path d="M34 50 L40 58 L46 64 L42 56 Z" fill="#5C3A21"/>
+      </symbol>
+      <symbol id="game-russiachina" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FFE4E6"/>
+        <polygon points="50 18 60 42 86 42 64 58 72 82 50 68 28 82 36 58 14 42 40 42" fill="#E63946"/>
+        <polygon points="50 28 56 44 72 44 60 54 64 70 50 62 36 70 40 54 28 44 44 44" fill="#9C1F2A"/>
+      </symbol>
+      <symbol id="game-iransyria" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#EDE9FE"/>
+        <path d="M42 18 Q70 28 70 50 Q70 72 42 82 Q66 76 66 50 Q66 24 42 18 Z" fill="#FFD23F"/>
+        <polygon points="76 30 78 36 84 36 79 40 81 46 76 42 71 46 73 40 68 36 74 36" fill="#FFD23F"/>
+      </symbol>
+
+      <!-- ===== CARTOON CHARACTER AVATARS ===== -->
+      <!-- Each is 100x100 with its own background. Multi-color by design. -->
+
+      <!-- Lady Gaga: blonde hair, hair bow, red lips -->
+      <symbol id="char-gaga" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#ffe5ed"/>
+        <path d="M22 35 Q18 70 22 95 L36 95 L36 65 Q33 50 38 38 Q44 26 50 24 Q56 26 62 38 Q67 50 64 65 L64 95 L78 95 Q82 70 78 35 Q72 12 50 12 Q28 12 22 35 Z" fill="#FFD75E"/>
+        <ellipse cx="50" cy="55" rx="18" ry="22" fill="#FAD9C0"/>
+        <path d="M32 40 Q42 30 50 32 Q58 30 68 40 Q58 38 50 38 Q42 38 32 40 Z" fill="#FFD75E"/>
+        <line x1="40" y1="50" x2="46" y2="50" stroke="#1a1330" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="54" y1="50" x2="60" y2="50" stroke="#1a1330" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="43" cy="52" r="1.8" fill="#1a1330"/>
+        <circle cx="57" cy="52" r="1.8" fill="#1a1330"/>
+        <path d="M44 65 Q50 62 56 65 Q53 70 50 70 Q47 70 44 65 Z" fill="#E63946"/>
+        <ellipse cx="38" cy="22" rx="6" ry="4" fill="#1a1330"/>
+        <ellipse cx="48" cy="22" rx="6" ry="4" fill="#1a1330"/>
+        <circle cx="43" cy="22" r="1.5" fill="#FFD75E"/>
+      </symbol>
+
+      <!-- Justin Bieber: brown swoopy bangs -->
+      <symbol id="char-bieber" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#E0F2FE"/>
+        <path d="M22 88 Q22 76 36 70 L64 70 Q78 76 78 88 L78 96 L22 96 Z" fill="#7C9DC9"/>
+        <rect x="44" y="66" width="12" height="8" fill="#FAD9C0"/>
+        <ellipse cx="50" cy="48" rx="18" ry="22" fill="#FAD9C0"/>
+        <path d="M28 38 Q33 20 52 22 Q70 24 72 40 Q66 32 58 30 Q50 26 42 30 Q34 32 28 38 Z" fill="#5C3A21"/>
+        <path d="M30 38 Q28 52 33 58 L33 46 Q31 42 30 38 Z" fill="#5C3A21"/>
+        <path d="M70 38 Q72 52 67 58 L67 46 Q69 42 70 38 Z" fill="#5C3A21"/>
+        <line x1="38" y1="42" x2="46" y2="42" stroke="#5C3A21" stroke-width="2" stroke-linecap="round"/>
+        <line x1="54" y1="42" x2="62" y2="42" stroke="#5C3A21" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="43" cy="48" r="2" fill="#1a1330"/>
+        <circle cx="57" cy="48" r="2" fill="#1a1330"/>
+        <path d="M44 60 Q50 64 56 60" stroke="#1a1330" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </symbol>
+
+      <!-- Taylor Swift: long blonde curls, red lips -->
+      <symbol id="char-swift" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FFE4E6"/>
+        <path d="M22 35 Q18 70 25 95 L40 95 Q35 75 35 60 Q33 45 38 35 Q42 25 50 22 Q58 25 62 35 Q67 45 65 60 Q65 75 60 95 L75 95 Q82 70 78 35 Q75 12 50 12 Q25 12 22 35 Z" fill="#F4C77B"/>
+        <ellipse cx="50" cy="50" rx="17" ry="20" fill="#FAD9C0"/>
+        <path d="M34 38 Q40 28 50 30 Q60 28 66 38 Q60 35 52 36 Q44 35 34 38 Z" fill="#F4C77B"/>
+        <circle cx="26" cy="78" r="5" fill="none" stroke="#F4C77B" stroke-width="3"/>
+        <circle cx="74" cy="78" r="5" fill="none" stroke="#F4C77B" stroke-width="3"/>
+        <line x1="39" y1="46" x2="46" y2="46" stroke="#1a1330" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="54" y1="46" x2="61" y2="46" stroke="#1a1330" stroke-width="1.5" stroke-linecap="round"/>
+        <ellipse cx="43" cy="48" rx="2" ry="2.5" fill="#1a1330"/>
+        <ellipse cx="57" cy="48" rx="2" ry="2.5" fill="#1a1330"/>
+        <path d="M44 62 Q50 59 56 62 Q53 67 50 67 Q47 67 44 62 Z" fill="#E63946"/>
+      </symbol>
+
+      <!-- iPhone with smiley screen -->
+      <symbol id="char-iphone" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#F1F5F9"/>
+        <rect x="32" y="14" width="36" height="72" rx="7" fill="#1a1330"/>
+        <rect x="35" y="20" width="30" height="56" rx="2" fill="#5BC0F8"/>
+        <rect x="44" y="16" width="12" height="2.5" rx="1.2" fill="#1a1330"/>
+        <rect x="44" y="80" width="12" height="2" rx="1" fill="#ffffff"/>
+        <rect x="38" y="24" width="6" height="6" rx="1.5" fill="#FF3D8A"/>
+        <rect x="46" y="24" width="6" height="6" rx="1.5" fill="#FFD23F"/>
+        <rect x="54" y="24" width="6" height="6" rx="1.5" fill="#3DDCA0"/>
+        <rect x="38" y="32" width="6" height="6" rx="1.5" fill="#8A4DFF"/>
+        <rect x="46" y="32" width="6" height="6" rx="1.5" fill="#FF7A3D"/>
+        <rect x="54" y="32" width="6" height="6" rx="1.5" fill="#5CC8FF"/>
+        <circle cx="44" cy="58" r="1.5" fill="#1a1330"/>
+        <circle cx="56" cy="58" r="1.5" fill="#1a1330"/>
+        <path d="M44 66 Q50 70 56 66" stroke="#1a1330" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </symbol>
+
+      <!-- iPad: bigger screen, smiley face -->
+      <symbol id="char-ipad" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#FEF3C7"/>
+        <rect x="14" y="14" width="72" height="72" rx="7" fill="#1a1330"/>
+        <rect x="18" y="18" width="64" height="64" rx="3" fill="#FFD23F"/>
+        <circle cx="50" cy="16" r="0.8" fill="#ffffff"/>
+        <circle cx="38" cy="44" r="3" fill="#1a1330"/>
+        <circle cx="62" cy="44" r="3" fill="#1a1330"/>
+        <path d="M36 58 Q50 68 64 58" stroke="#1a1330" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </symbol>
+
+      <!-- Android: cute green robot -->
+      <symbol id="char-android" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#DCFCE7"/>
+        <line x1="35" y1="22" x2="30" y2="14" stroke="#3DDC84" stroke-width="3" stroke-linecap="round"/>
+        <line x1="65" y1="22" x2="70" y2="14" stroke="#3DDC84" stroke-width="3" stroke-linecap="round"/>
+        <path d="M22 30 Q22 26 26 26 L74 26 Q78 26 78 30 L78 60 Q78 70 68 70 L32 70 Q22 70 22 60 Z" fill="#3DDC84"/>
+        <circle cx="38" cy="46" r="3.5" fill="#ffffff"/>
+        <circle cx="62" cy="46" r="3.5" fill="#ffffff"/>
+        <circle cx="38" cy="46" r="1.6" fill="#1a1330"/>
+        <circle cx="62" cy="46" r="1.6" fill="#1a1330"/>
+        <path d="M40 58 Q50 62 60 58" stroke="#1a1330" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <rect x="14" y="40" width="8" height="22" rx="4" fill="#3DDC84"/>
+        <rect x="78" y="40" width="8" height="22" rx="4" fill="#3DDC84"/>
+        <rect x="30" y="72" width="40" height="14" rx="3" fill="#3DDC84"/>
+        <rect x="36" y="86" width="6" height="8" rx="2" fill="#3DDC84"/>
+        <rect x="58" y="86" width="6" height="8" rx="2" fill="#3DDC84"/>
+      </symbol>
+
+      <!-- Instagram logo: gradient camera -->
+      <symbol id="char-instagram" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FFDC80"/>
+            <stop offset="20%" stop-color="#FCAF45"/>
+            <stop offset="40%" stop-color="#F77737"/>
+            <stop offset="60%" stop-color="#F56040"/>
+            <stop offset="80%" stop-color="#E1306C"/>
+            <stop offset="100%" stop-color="#833AB4"/>
+          </linearGradient>
+        </defs>
+        <rect width="100" height="100" rx="22" fill="url(#ig-grad)"/>
+        <rect x="22" y="22" width="56" height="56" rx="14" fill="none" stroke="#ffffff" stroke-width="5"/>
+        <circle cx="50" cy="50" r="14" fill="none" stroke="#ffffff" stroke-width="5"/>
+        <circle cx="68" cy="32" r="3.5" fill="#ffffff"/>
+      </symbol>
+
+      <!-- Skinny jeans illustration -->
+      <symbol id="char-jeans" viewBox="0 0 100 100">
+        <rect width="100" height="100" rx="20" fill="#F0F4F8"/>
+        <!-- waistband -->
+        <path d="M28 14 L72 14 L70 24 L30 24 Z" fill="#3B5378"/>
+        <!-- jeans body -->
+        <path d="M30 24 L70 24 L68 50 L62 92 L54 92 L52 50 L48 50 L46 92 L38 92 L32 50 Z" fill="#5B7AAA"/>
+        <!-- shading on legs -->
+        <path d="M32 50 L38 92 L40 92 L34 50 Z" fill="#3B5378" opacity=".4"/>
+        <path d="M68 50 L62 92 L60 92 L66 50 Z" fill="#3B5378" opacity=".4"/>
+        <!-- center seam -->
+        <line x1="50" y1="24" x2="50" y2="50" stroke="#3B5378" stroke-width="1.5" opacity=".6"/>
+        <!-- stitching -->
+        <line x1="30" y1="20" x2="70" y2="20" stroke="#FFD23F" stroke-width="0.8" stroke-dasharray="2 2"/>
+        <!-- pocket -->
+        <path d="M36 28 L42 28 L40 38 L36 36 Z" fill="none" stroke="#FFD23F" stroke-width="0.8" stroke-dasharray="2 2"/>
+        <path d="M58 28 L64 28 L64 36 L60 38 Z" fill="none" stroke="#FFD23F" stroke-width="0.8" stroke-dasharray="2 2"/>
+        <!-- button -->
+        <circle cx="50" cy="20" r="1.5" fill="#FFD23F"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ===================== TOP NAV ====================== -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">The <span class="yr">2010s</span> · Jane H.</div>
+      <nav>
+        <a href="#popstars">Pop Stars</a>
+        <a href="#political">Political</a>
+        <a href="#cultural">Cultural</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ========================= -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="tag">Decade Report</span>
+      <h1>The <em>2010s</em>.</h1>
+      <div class="meta">
+        <span>by <strong>Jane H.</strong></span>
+        <span class="dot"></span>
+        <span><strong>2010</strong> – <strong>2019</strong></span>
+        <span class="dot"></span>
+        <span>Today I'm dressed as <strong>Taylor Swift</strong></span>
+      </div>
+      <p class="lede">
+        A decade of new presidents, big new laws, the iPhone in everyone's pocket,
+        Instagram changing the way we see art — and some really weird fashion.
+        Welcome to the 2010s.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== POP STARS ==================== -->
+  <section id="popstars" class="wrap">
+    <div class="section-mark cultural" style="padding-bottom:0">
+      <div class="kicker">Before we start…</div>
+      <h2>Popular <em>people</em>.</h2>
+      <p>Three of the biggest pop stars of the 2010s. You probably know all their songs.</p>
+    </div>
+    <div class="polaroids">
+      <div class="polaroid">
+        <div class="pic"><img src="images/ladygaga.jpg" alt="Lady Gaga" /></div>
+        <div class="nm">Lady Gaga</div>
+      </div>
+      <div class="polaroid">
+        <div class="pic"><img src="images/justinbieber.jpg" alt="Justin Bieber" /></div>
+        <div class="nm">Justin Bieber</div>
+      </div>
+      <div class="polaroid">
+        <div class="pic"><img src="images/taylorswift.jpg" alt="Taylor Swift" /></div>
+        <div class="nm">Taylor Swift</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PART 1: POLITICAL ============ -->
+  <section id="political" class="wrap">
+    <div class="section-mark political">
+      <div class="kicker">Part One</div>
+      <h2><em>Political.</em></h2>
+      <p>Presidents, laws, foreign policy, civil rights, and the wars America was fighting.</p>
+    </div>
+
+    <!-- Presidents -->
+    <article class="topic">
+      <div class="row">
+        <div class="label"><span class="num">P · 1</span>Presidents</div>
+        <div>
+          <h3>Two presidents led the <em>2010s</em>.</h3>
+          <p>The 2010s started with Barack Obama in the White House and ended with Donald Trump.</p>
+          <div class="pres-grid">
+            <div class="pres-card obama">
+              <div class="portrait"><img src="images/barack.webp" alt="Barack Obama portrait" /></div>
+              <div class="role">44th President</div>
+              <div class="name">Barack Obama</div>
+              <div class="yrs">2009 – 2017</div>
+            </div>
+            <div class="pres-card trump">
+              <div class="portrait"><img src="images/presidenttrump.jpg" alt="Donald Trump portrait" /></div>
+              <div class="role">45th President</div>
+              <div class="name">Donald Trump</div>
+              <div class="yrs">2017 – 2021</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Domestic Policy -->
+    <article class="topic">
+      <div class="row">
+        <div class="label"><span class="num">P · 2</span>Domestic Policy</div>
+        <div>
+          <h3>The rules at <em>home</em>.</h3>
+          <p>Domestic policy is <span class="pop">the decisions, laws, and regulations a government enacts to manage affairs within its own borders</span>. Some examples from the 2010s are:</p>
+          <ol class="num-list">
+            <li><strong>The Affordable Care Act</strong> (Obamacare) — 2010</li>
+            <li><strong>Financial Regulation</strong> — the Dodd-Frank Act, 2010</li>
+            <li><strong>Automotive Industry Bailout</strong> — helping car companies with money issues</li>
+            <li><strong>Social Policy &amp; Civil Rights</strong></li>
+            <li><strong>Tax Policy</strong> — tax cut for 95% of working families</li>
+            <li><strong>Environment &amp; Energy</strong> — investing in clean energy projects</li>
+            <li><strong>Education</strong> — focused on expanding grants for student loans</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <!-- Foreign Policy -->
+    <article class="topic">
+      <div class="row">
+        <div class="label"><span class="num">P · 3</span>Foreign Policy</div>
+        <div>
+          <h3>How the U.S. worked with <em>the world</em>.</h3>
+          <p><span class="pop">Foreign policy is a government's ideas and goals for working with other countries.</span></p>
+          <p>In 2010, the U.S. foreign policy focused on disagreements with <strong>Iraq</strong> and <strong>Afghanistan</strong> as well as <strong>Iran</strong>, <strong>North Korea</strong>, and <strong>China</strong>. The U.S. also worked on trade agreements with other countries.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Civil Rights -->
+    <article class="topic">
+      <div class="row">
+        <div class="label"><span class="num">P · 4</span>Civil Rights</div>
+        <div>
+          <h3>Equal treatment for <em>everyone</em>.</h3>
+          <p>Civil rights are <span class="pop">legal protections for citizens by the government for equal treatment and opportunities</span>. In 2010, civil rights in the U.S. focused on equal protections for all citizens. Some examples are:</p>
+          <div class="chips">
+            <span class="chip">Health care</span>
+            <span class="chip alt">Anti-discrimination</span>
+            <span class="chip">Voting rights</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Conflicts/Wars -->
+    <article class="topic">
+      <div class="row">
+        <div class="label"><span class="num">P · 5</span>Conflicts &amp; Wars</div>
+        <div>
+          <h3>What America was <em>fighting</em>.</h3>
+          <p>There were border disagreements during the 2010s. The two big wars America was fighting were the <strong>Afghanistan War</strong> and the <strong>Iraq War</strong>.</p>
+          <div class="tiles two">
+            <div class="tile">
+              <div class="em"><svg class="icon icon-md"><use href="#icon-mountain"/></svg></div>
+              <div class="n">War in Afghanistan</div>
+              <div class="h">A war the U.S. fought for most of the 2010s.</div>
+            </div>
+            <div class="tile">
+              <div class="em"><svg class="icon icon-md"><use href="#icon-sun"/></svg></div>
+              <div class="n">Iraq War</div>
+              <div class="h">Continued from the 2000s into the early 2010s.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== PART 2: CULTURAL ============= -->
+  <section id="cultural" class="wrap">
+    <div class="section-mark cultural">
+      <div class="kicker">Part Two</div>
+      <h2><em>Cultural.</em></h2>
+      <p>Tech, music, movies, art, and the fashion trends people actually wore in the 2010s.</p>
+    </div>
+
+    <!-- Tech & Science -->
+    <article class="topic">
+      <div class="row">
+        <div class="label"><span class="num">C · 1</span>Technology &amp; Science</div>
+        <div>
+          <h3>The year <em>touchscreens</em> took over.</h3>
+          <p>2010 was a big year for technology. The <strong>Apple iPad</strong> and the <strong>iPhone 4</strong> were released, as well as the <strong>Android</strong>. It was a big year for touchscreen technology. For science, the <strong>first synthetic bacterial cell</strong> was discovered.</p>
+          <div class="tiles">
+            <div class="tile character"><div class="em"><svg viewBox="0 0 100 100"><use href="#char-iphone"/></svg></div><div class="n">iPhone 4</div><div class="h">Released June 2010.</div></div>
+            <div class="tile character"><div class="em"><svg viewBox="0 0 100 100"><use href="#char-ipad"/></svg></div><div class="n">iPad</div><div class="h">Apple's first tablet, 2010.</div></div>
+            <div class="tile character"><div class="em"><svg viewBox="0 0 100 100"><use href="#char-android"/></svg></div><div class="n">Android</div><div class="h">Phones for everyone else.</div></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Music -->
+    <article class="topic">
+      <div class="row">
+        <div class="label"><span class="num">C · 2</span>Music</div>
+        <div>
+          <h3>Pop took over the <em>radio</em>.</h3>
+          <p>Popular singers in 2010 were <strong>Lady Gaga</strong>, <strong>Justin Bieber</strong>, and <strong>Taylor Swift</strong>.</p>
+          <div class="tiles">
+            <div class="tile character"><div class="em"><svg viewBox="0 0 100 100"><use href="#char-gaga"/></svg></div><div class="n">Lady Gaga</div><div class="h">"Bad Romance," "Born This Way"</div></div>
+            <div class="tile character"><div class="em"><svg viewBox="0 0 100 100"><use href="#char-bieber"/></svg></div><div class="n">Justin Bieber</div><div class="h">"Baby," "Sorry"</div></div>
+            <div class="tile character"><div class="em"><svg viewBox="0 0 100 100"><use href="#char-swift"/></svg></div><div class="n">Taylor Swift</div><div class="h">"Love Story," "Shake It Off"</div></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TV / Movies -->
+    <article class="topic">
+      <div class="row">
+        <div class="label"><span class="num">C · 3</span>Television &amp; Movies</div>
+        <div>
+          <h3>2010 at the <em>movies</em>.</h3>
+          <p>Some of the biggest movies of 2010 were <strong>Toy Story 3</strong>, <strong>Despicable Me</strong>, and <strong>How to Train Your Dragon</strong>.</p>
+          <div class="tickets">
+            <div class="ticket">
+              <div class="poster"><img src="images/toy-story-3.jpg" alt="Toy Story 3 movie poster" /></div>
+              <div class="info"><div class="ti">Toy Story 3</div><div class="yr">2010</div></div>
+            </div>
+            <div class="ticket">
+              <div class="poster"><img src="images/despicable-me.jpg" alt="Despicable Me movie poster" /></div>
+              <div class="info"><div class="ti">Despicable Me</div><div class="yr">2010</div></div>
+            </div>
+            <div class="ticket">
+              <div class="poster"><img src="images/how-to-train-your-dragon.jpg" alt="How to Train Your Dragon movie poster" /></div>
+              <div class="info"><div class="ti">How to Train Your Dragon</div><div class="yr">2010</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Art -->
+    <article class="topic">
+      <div class="row">
+        <div class="label"><span class="num">C · 4</span>Art</div>
+        <div>
+          <h3>Instagram changed <em>art</em>.</h3>
+          <p><strong>Instagram was created in 2010</strong>, and art through social media became popular. Suddenly anyone with a phone could share their photos and art with the whole world — no gallery needed.</p>
+          <div class="feature-card">
+            <div class="img"><svg viewBox="0 0 100 100"><use href="#char-instagram"/></svg></div>
+            <div>
+              <div class="ft">Instagram</div>
+              <div class="fcap">Launched October 2010</div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip warm"><svg class="icon icon-sm"><use href="#icon-camera"/></svg>Filters</span>
+            <span class="chip warm alt">#hashtags</span>
+            <span class="chip warm">Square photos</span>
+            <span class="chip warm alt">Art accounts</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Fashion / Fads -->
+    <article class="topic">
+      <div class="row">
+        <div class="label"><span class="num">C · 5</span>Fashion &amp; Fads</div>
+        <div>
+          <h3>Skinny jeans, silly bands, <em>shutter shades</em>.</h3>
+          <p>The 2010s had some of the most memorable fashion fads ever — some you'd still wear today, some… you definitely wouldn't.</p>
+          <div class="feature-card">
+            <div class="img"><svg viewBox="0 0 100 100"><use href="#char-jeans"/></svg></div>
+            <div>
+              <div class="ft">Skinny Jeans</div>
+              <div class="fcap">The 2010s uniform</div>
+            </div>
+          </div>
+          <div class="chips fun">
+            <span class="chip">Skinny jeans</span>
+            <span class="chip">Silly Bandz</span>
+            <span class="chip">Hair feathers</span>
+            <span class="chip">Shutter shades</span>
+            <span class="chip">Peplum tops</span>
+            <span class="chip">Chunky necklaces</span>
+            <span class="chip">Infinity scarves</span>
+            <span class="chip">Toms shoes</span>
+            <span class="chip">Ballet flats</span>
+            <span class="chip">Ugg boots</span>
+            <span class="chip">The Pouf hairstyle</span>
+            <span class="chip">Extreme contouring</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== QUIZ + GAME ================== -->
+  <section id="quiz" class="wrap">
+    <div class="section-mark cultural">
+      <div class="kicker">Pop quiz!</div>
+      <h2>Now <em>you</em> try.</h2>
+      <p>Eight questions about the 2010s. Pick a mode — solo quiz to read at your own pace, or live game for the whole class.</p>
+    </div>
+
+    <!-- Mode tabs -->
+    <div class="mode-tabs" role="tablist" aria-label="Choose mode">
+      <button class="mode-tab active" data-mode="game" role="tab" aria-selected="true">Live Game</button>
+      <button class="mode-tab" data-mode="quiz" role="tab" aria-selected="false">Solo Quiz</button>
+    </div>
+
+    <!-- Game mode (Kahoot-style) — DEFAULT -->
+    <div class="game-stage" id="gameBox" data-mode-content="game">
+      <!-- Initial start screen rendered by JS -->
+    </div>
+
+    <!-- Quiz mode -->
+    <div class="quiz" id="quizBox" data-mode-content="quiz" hidden>
+      <div class="qhead">
+        <div class="qnum" id="quizQNum">Question 1 of 8</div>
+        <div class="qscore" id="quizScore">Score: 0</div>
+      </div>
+      <div class="progress" id="quizProgress"></div>
+      <div class="question" id="quizQ"></div>
+      <div class="options" id="quizOpts"></div>
+      <div class="feedback" id="quizFeedback"></div>
+      <button class="next" id="quizNext" hidden>Next →</button>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ======================= -->
+  <footer>
+    <div class="wrap">
+      <h4>Thanks for reading the <em>2010s</em>!</h4>
+      <p>A decade report by Jane H.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* =========================================================
+       Quiz logic — vanilla JS, no dependencies.
+       Each question has a question (q), four options (o), and
+       the index of the correct answer (a).
+       ========================================================= */
+
+    // Each question can specify a `mascots` array — 4 SVG symbol ids that
+    // override the default colored Kahoot mascots for that question's answers.
+    const QUIZ = [
+      {
+        q: "Who was the 44th President of the United States?",
+        o: ["Donald Trump", "Barack Obama", "George W. Bush", "Joe Biden"],
+        a: 1,
+        mascots: ['game-trump', 'game-obama', 'game-bush', 'game-biden']
+      },
+      {
+        q: "What healthcare law was passed in 2010?",
+        o: ["Medicare", "The Affordable Care Act (Obamacare)", "Social Security Act", "The Patriot Act"],
+        a: 1,
+        mascots: ['game-medicare', 'game-aca', 'game-ssn', 'game-patriot']
+      },
+      {
+        q: "What major Apple device was released in 2010?",
+        o: ["iPod", "Apple Watch", "iPad", "MacBook Air"],
+        a: 2,
+        mascots: ['game-ipod', 'game-applewatch', 'char-ipad', 'game-macbookair']
+      },
+      {
+        q: 'Which singer had the 2010 hit "Bad Romance"?',
+        o: ["Taylor Swift", "Justin Bieber", "Lady Gaga", "Beyoncé"],
+        a: 2,
+        mascots: ['char-swift', 'char-bieber', 'char-gaga', 'game-beyonce']
+      },
+      {
+        q: "Which animated movie came out in 2010 and made everyone cry?",
+        o: ["Frozen", "Toy Story 3", "Tangled", "Finding Dory"],
+        a: 1,
+        mascots: ['game-frozen', 'game-toystory', 'game-tangled', 'game-findingdory']
+      },
+      {
+        q: "Which social media app was created in 2010?",
+        o: ["TikTok", "Snapchat", "Instagram", "Twitter"],
+        a: 2,
+        mascots: ['game-tiktok', 'game-snapchat', 'char-instagram', 'game-twitter']
+      },
+      {
+        q: "Which 2010s fad was colorful, animal-shaped rubber bracelets?",
+        o: ["Silly Bandz", "Livestrong bands", "Friendship bracelets", "Slap bracelets"],
+        a: 0,
+        mascots: ['game-sillybandz', 'game-livestrong', 'game-friendship', 'game-slap']
+      },
+      {
+        q: "Which two countries did the U.S. have major wars in during the 2010s?",
+        o: ["Korea & Vietnam", "Afghanistan & Iraq", "Russia & China", "Iran & Syria"],
+        a: 1,
+        mascots: ['game-koreavietnam', 'game-afghaniraq', 'game-russiachina', 'game-iransyria']
+      }
+    ];
+
+    // Quiz state
+    let qi = 0;       // current question index
+    let score = 0;    // running score
+    let locked = false;
+
+    const $box = document.getElementById('quizBox');
+
+    // The quiz box has fresh DOM after restart, so look up elements
+    // each time we render — no stale references.
+    function $(id) { return document.getElementById(id); }
+
+    const QUIZ_HTML =
+      '<div class="qhead">' +
+        '<div class="qnum" id="quizQNum"></div>' +
+        '<div class="qscore" id="quizScore"></div>' +
+      '</div>' +
+      '<div class="progress" id="quizProgress"></div>' +
+      '<div class="question" id="quizQ"></div>' +
+      '<div class="options" id="quizOpts"></div>' +
+      '<div class="feedback" id="quizFeedback"></div>' +
+      '<button class="next" id="quizNext" hidden>Next →</button>';
+
+    function render() {
+      // Show final scorecard
+      if (qi >= QUIZ.length) {
+        $box.innerHTML =
+          '<div class="scorecard">' +
+            '<div class="lbl">Your final score</div>' +
+            '<div class="big">' + score + ' / ' + QUIZ.length + '</div>' +
+            '<div class="msg">' + scoreMessage(score) + '</div>' +
+            '<button class="next" id="quizRestart">Play again ↻</button>' +
+          '</div>';
+        $('quizRestart').onclick = restart;
+        return;
+      }
+
+      // Make sure the quiz markup exists (after restart we may have only the scorecard)
+      if (!$('quizQ')) $box.innerHTML = QUIZ_HTML;
+
+      const item = QUIZ[qi];
+
+      $('quizQNum').textContent = 'Question ' + (qi + 1) + ' of ' + QUIZ.length;
+      $('quizScore').textContent = 'Score: ' + score;
+      $('quizQ').textContent = item.q;
+
+      // Build the progress bar
+      const $progress = $('quizProgress');
+      $progress.innerHTML = '';
+      QUIZ.forEach((_, n) => {
+        const span = document.createElement('span');
+        if (n < qi) span.className = 'done';
+        else if (n === qi) span.className = 'current';
+        $progress.appendChild(span);
+      });
+
+      // Build the option buttons
+      const $opts = $('quizOpts');
+      $opts.innerHTML = '';
+      item.o.forEach((label, n) => {
+        const b = document.createElement('button');
+        b.textContent = label;
+        b.onclick = () => answer(n, b);
+        $opts.appendChild(b);
+      });
+
+      $('quizFeedback').textContent = '';
+      const $next = $('quizNext');
+      $next.hidden = true;
+      $next.onclick = nextQuestion;
+      locked = false;
+    }
+
+    function answer(n, btn) {
+      if (locked) return;
+      locked = true;
+
+      const item = QUIZ[qi];
+      const buttons = $('quizOpts').querySelectorAll('button');
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.a) b.classList.add('correct');
+      });
+
+      const $fb = $('quizFeedback');
+      const checkSvg = '<svg class="icon icon-feedback"><use href="#icon-check"/></svg>';
+      const xSvg     = '<svg class="icon icon-feedback"><use href="#icon-x"/></svg>';
+      if (n === item.a) {
+        score++;
+        $fb.innerHTML = checkSvg + 'Correct!';
+        $fb.style.color = '#1a8047';
+      } else {
+        btn.classList.add('wrong');
+        $fb.innerHTML = xSvg + 'Not quite — the answer is "' + item.o[item.a] + '."';
+        $fb.style.color = '#a10000';
+      }
+
+      $('quizScore').textContent = 'Score: ' + score;
+      $('quizNext').hidden = false;
+    }
+
+    function scoreMessage(s) {
+      const trophy = '<svg class="icon icon-feedback"><use href="#icon-trophy"/></svg>';
+      if (s === QUIZ.length) return trophy + "Perfect score! You really know the 2010s.";
+      if (s >= 6) return "Awesome — you're a 2010s expert!";
+      if (s >= 4) return "Nice work! You learned a lot today.";
+      return "Time for a Toy Story 3 re-watch?";
+    }
+
+    function nextQuestion() {
+      qi++;
+      render();
+    }
+
+    function restart() {
+      qi = 0;
+      score = 0;
+      $box.innerHTML = QUIZ_HTML;
+      render();
+    }
+
+    // Initial render
+    render();
+
+    /* =========================================================
+       Mode tabs (Quiz / Game)
+       ========================================================= */
+    const $tabs = document.querySelectorAll('.mode-tab');
+    const $modeBoxes = document.querySelectorAll('[data-mode-content]');
+    $tabs.forEach(tab => {
+      tab.onclick = () => {
+        const mode = tab.dataset.mode;
+        $tabs.forEach(t => {
+          const active = t.dataset.mode === mode;
+          t.classList.toggle('active', active);
+          t.setAttribute('aria-selected', active);
+        });
+        $modeBoxes.forEach(box => {
+          box.hidden = box.dataset.modeContent !== mode;
+        });
+        if (mode === 'game' && !gameStarted) renderGameStart();
+      };
+    });
+
+    /* =========================================================
+       Web Audio sound system — generated tones, no asset files.
+       Sounds are silent by default; Jane toggles them on.
+       ========================================================= */
+    let audioCtx = null;
+    let soundOn = true;   // Sound starts ON; browsers still wait for first user click to actually play.
+
+    function ensureAudio() {
+      if (!audioCtx) {
+        try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+        catch (e) { return null; }
+      }
+      // Browsers suspend audio until a user gesture; resume on demand.
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      return audioCtx;
+    }
+
+    function tone(freq, dur, type, vol, when) {
+      if (!soundOn) return;
+      const ctx = ensureAudio();
+      if (!ctx) return;
+      const t0 = ctx.currentTime + (when || 0);
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type || 'sine';
+      osc.frequency.setValueAtTime(freq, t0);
+      gain.gain.setValueAtTime(0.0001, t0);
+      gain.gain.exponentialRampToValueAtTime(vol || 0.15, t0 + 0.01);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.start(t0);
+      osc.stop(t0 + dur + 0.02);
+    }
+
+    function sweep(fStart, fEnd, dur, type, vol) {
+      if (!soundOn) return;
+      const ctx = ensureAudio();
+      if (!ctx) return;
+      const t0 = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type || 'sawtooth';
+      osc.frequency.setValueAtTime(fStart, t0);
+      osc.frequency.exponentialRampToValueAtTime(fEnd, t0 + dur);
+      gain.gain.setValueAtTime(0.0001, t0);
+      gain.gain.exponentialRampToValueAtTime(vol || 0.15, t0 + 0.01);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.start(t0);
+      osc.stop(t0 + dur + 0.02);
+    }
+
+    const sfx = {
+      start:    () => { tone(523,.12,'square',.18); tone(659,.12,'square',.18,.12); tone(784,.25,'square',.2,.24); },
+      tick:     () => tone(880,.04,'square',.05),
+      urgent:   () => tone(1320,.05,'square',.10),
+      correct:  () => { tone(523,.10,'sine',.18); tone(659,.10,'sine',.2,.10); tone(784,.18,'sine',.22,.20); tone(1047,.30,'sine',.22,.32); },
+      wrong:    () => { sweep(440,110,.5,'sawtooth',.16); },
+      timeup:   () => { tone(330,.18,'sawtooth',.18); tone(220,.30,'sawtooth',.20,.18); },
+      click:    () => tone(660,.05,'square',.10)
+    };
+
+    /* ----- Background music — looping chiptune in C major (I-IV-V-I) -----
+       Generated entirely with oscillators. Each "loop" is 4 bars at ~136 BPM.
+       Bass line on triangle wave + melody on square wave for chiptune feel.
+
+       IMPORTANT: music notes are routed through a master gain so we can
+       silence already-scheduled notes instantly when the user toggles sound
+       off. Without this, scheduled notes continue playing for up to 8s
+       after stopBgMusic() runs (and overlapping if they re-toggle quickly). */
+    let musicLoopTimer = null;
+    let musicStartDelay = null;
+    let musicScheduledUntil = 0;
+    let musicGain = null;
+
+    function ensureMusicGain() {
+      const ctx = ensureAudio();
+      if (!ctx) return null;
+      if (musicGain && musicGain.context === ctx) return musicGain;
+      musicGain = ctx.createGain();
+      musicGain.gain.value = 1;
+      musicGain.connect(ctx.destination);
+      return musicGain;
+    }
+
+    // SFX path — direct to destination. Used by tone()/sweep()/sfx.* and the victory fanfare.
+    function noteAt(freq, dur, type, vol, when) {
+      if (!soundOn) return;
+      const ctx = ensureAudio();
+      if (!ctx || when < ctx.currentTime - 0.01) return;
+      const t = Math.max(when, ctx.currentTime + 0.01);
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, t);
+      gain.gain.setValueAtTime(0.0001, t);
+      gain.gain.exponentialRampToValueAtTime(vol, t + 0.012);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.start(t);
+      osc.stop(t + dur + 0.05);
+    }
+
+    // Music path — through musicGain so we can mute the queue.
+    function musicNoteAt(freq, dur, type, vol, when) {
+      if (!soundOn) return;
+      const ctx = ensureAudio();
+      if (!ctx) return;
+      const mg = ensureMusicGain();
+      if (!mg) return;
+      const t = Math.max(when, ctx.currentTime + 0.01);
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, t);
+      gain.gain.setValueAtTime(0.0001, t);
+      gain.gain.exponentialRampToValueAtTime(vol, t + 0.012);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      osc.connect(gain); gain.connect(mg);
+      osc.start(t);
+      osc.stop(t + dur + 0.05);
+    }
+
+    // 4-bar I-IV-V-I melody loop
+    const MELODY = [
+      // Bar 1 — C major: C E G C5 E G E C
+      261.63, 329.63, 392.00, 523.25, 329.63, 392.00, 329.63, 261.63,
+      // Bar 2 — F major: F A C5 F5 A C5 A F
+      349.23, 440.00, 523.25, 698.46, 440.00, 523.25, 440.00, 349.23,
+      // Bar 3 — G major: G B D5 G5 B D5 B G
+      392.00, 493.88, 587.33, 783.99, 493.88, 587.33, 493.88, 392.00,
+      // Bar 4 — C major resolution
+      261.63, 329.63, 392.00, 523.25, 329.63, 261.63, 329.63, 392.00
+    ];
+    const BASS = [
+      // Bar 1: C C G C
+      130.81, 130.81, 196.00, 130.81,
+      // Bar 2: F F C F
+      174.61, 174.61, 261.63, 174.61,
+      // Bar 3: G G D G
+      196.00, 196.00, 293.66, 196.00,
+      // Bar 4: C G C C
+      130.81, 196.00, 130.81, 130.81
+    ];
+    const EIGHTH = 0.22; // ~136 BPM eighth note
+
+    function scheduleMusicLoop() {
+      if (!soundOn) return;
+      const ctx = ensureAudio();
+      if (!ctx) return;
+
+      const start = Math.max(ctx.currentTime + 0.05, musicScheduledUntil);
+
+      // Melody — eighth notes (routed through musicGain)
+      let t = start;
+      MELODY.forEach((f) => {
+        musicNoteAt(f, EIGHTH * 0.85, 'square', 0.05, t);
+        t += EIGHTH;
+      });
+
+      // Bass — quarter notes (= 2 eighths each)
+      let bt = start;
+      BASS.forEach((f) => {
+        musicNoteAt(f, EIGHTH * 1.7, 'triangle', 0.085, bt);
+        bt += EIGHTH * 2;
+      });
+
+      const loopSec = EIGHTH * 32; // 4 bars × 8 eighths
+      musicScheduledUntil = start + loopSec;
+      // Schedule the next loop a hair before this one ends so there's no gap
+      musicLoopTimer = setTimeout(scheduleMusicLoop, (loopSec - 0.15) * 1000);
+    }
+
+    function startBgMusic() {
+      if (musicLoopTimer) return;       // already running
+      if (!soundOn) return;
+      const ctx = ensureAudio();
+      if (!ctx) return;
+      // Restore music gain to full (it may be 0 from a prior stop).
+      const mg = ensureMusicGain();
+      mg.gain.cancelScheduledValues(ctx.currentTime);
+      mg.gain.setValueAtTime(0, ctx.currentTime);
+      mg.gain.linearRampToValueAtTime(1, ctx.currentTime + 0.06);
+      musicScheduledUntil = 0;
+      scheduleMusicLoop();
+    }
+
+    // Schedule music to start after a delay; cancellable via stopBgMusic.
+    function startBgMusicDelayed(seconds) {
+      if (musicStartDelay) clearTimeout(musicStartDelay);
+      musicStartDelay = setTimeout(() => {
+        musicStartDelay = null;
+        startBgMusic();
+      }, seconds * 1000);
+    }
+
+    function stopBgMusic() {
+      // Cancel any pending start AND the loop scheduler
+      if (musicStartDelay) { clearTimeout(musicStartDelay); musicStartDelay = null; }
+      if (musicLoopTimer)  { clearTimeout(musicLoopTimer);  musicLoopTimer  = null; }
+      // Mute the master music gain so already-scheduled notes go silent immediately
+      if (musicGain && audioCtx) {
+        const now = audioCtx.currentTime;
+        musicGain.gain.cancelScheduledValues(now);
+        musicGain.gain.setValueAtTime(musicGain.gain.value, now);
+        musicGain.gain.linearRampToValueAtTime(0, now + 0.04);
+      }
+    }
+
+    function playVictoryFanfare() {
+      if (!soundOn) return;
+      const ctx = ensureAudio();
+      if (!ctx) return;
+      const t0 = ctx.currentTime + 0.05;
+      const e = 0.16;
+      // da-da-da-DAH-da-DAH-da-DAAAH (with octave-down harmony)
+      const seq = [
+        [523.25, 1], [659.25, 1], [783.99, 1], [1046.50, 2],
+        [1046.50, 1], [880.00, 1], [1046.50, 1], [1318.51, 6]
+      ];
+      let t = t0;
+      seq.forEach(([f, len]) => {
+        noteAt(f,       e * len * 0.92, 'square',   0.18, t);
+        noteAt(f * 0.5, e * len * 0.92, 'triangle', 0.10, t);
+        t += e * len;
+      });
+    }
+
+    /* =========================================================
+       Kahoot-style live game (MC mode)
+       Reuses the QUIZ array. 20s timer per question.
+       ========================================================= */
+    const COLORS = ['red','blue','yellow','green'];
+    const SHAPES = {
+      red:    '<svg viewBox="0 0 100 100" width="46" height="46"><use href="#game-red"/></svg>',
+      blue:   '<svg viewBox="0 0 100 100" width="46" height="46"><use href="#game-blue"/></svg>',
+      yellow: '<svg viewBox="0 0 100 100" width="46" height="46"><use href="#game-yellow"/></svg>',
+      green:  '<svg viewBox="0 0 100 100" width="46" height="46"><use href="#game-green"/></svg>'
+    };
+
+    const $game = document.getElementById('gameBox');
+    let gameStarted = false;
+    let gi = 0, gscore = 0, glocked = false;
+    let gtimer = null, gtimeLeft = 20;
+    const TIMER_SEC = 20;
+
+    function soundButtonHTML() {
+      const iconId = soundOn ? 'icon-volume' : 'icon-volume-off';
+      const label = soundOn ? 'Sound ON' : 'Sound OFF';
+      return '<button class="sound-btn ' + (soundOn ? 'on' : '') + '" id="soundToggle">' +
+               '<svg class="icon icon-sm" style="margin:0"><use href="#' + iconId + '"/></svg>' +
+               label +
+             '</button>';
+    }
+
+    // Random ambient sparkles drifting up from the bottom of the game stage.
+    // Generated as a single HTML string so each render gets fresh randomness.
+    function sparkleHTML(count) {
+      let html = '<div class="sparkle-layer">';
+      for (let i = 0; i < (count || 14); i++) {
+        const left  = (Math.random() * 100).toFixed(0);
+        const dur   = (5 + Math.random() * 6).toFixed(1);
+        const delay = (Math.random() * 8).toFixed(1);
+        const size  = (3 + Math.random() * 5).toFixed(1);
+        const op    = (0.35 + Math.random() * 0.4).toFixed(2);
+        html += '<div class="sparkle" style="' +
+                  'left:' + left + '%;' +
+                  'animation-duration:' + dur + 's;' +
+                  'animation-delay:-' + delay + 's;' +
+                  'width:' + size + 'px;height:' + size + 'px;' +
+                  'opacity:' + op +
+                '"></div>';
+      }
+      return html + '</div>';
+    }
+
+    function wireSoundToggle() {
+      const el = document.getElementById('soundToggle');
+      if (el) el.onclick = toggleSound;
+    }
+
+    function renderGameStart() {
+      stopTimer();
+      gameStarted = false;
+      gi = 0; gscore = 0;
+      $game.innerHTML =
+        sparkleHTML() +
+        '<div style="position:absolute;top:18px;right:18px;z-index:2">' + soundButtonHTML() + '</div>' +
+        '<div class="game-start">' +
+          '<h3>Live <em>Game</em></h3>' +
+          '<p>8 questions, 20 seconds each. Class shouts the answer — you click it.</p>' +
+          '<button class="game-start-btn" id="gameStartBtn">Start Game</button>' +
+        '</div>';
+      wireSoundToggle();
+      document.getElementById('gameStartBtn').onclick = startGame;
+    }
+
+    function toggleSound() {
+      soundOn = !soundOn;
+      ensureAudio();
+      if (soundOn) {
+        sfx.click();
+        // If we're mid-question, resume music
+        if (gameStarted && !glocked) startBgMusic();
+      } else {
+        stopBgMusic();
+      }
+      const btn = document.getElementById('soundToggle');
+      if (btn) {
+        btn.outerHTML = soundButtonHTML();
+        wireSoundToggle();
+      }
+    }
+
+    function startGame() {
+      gameStarted = true;
+      gi = 0; gscore = 0;
+      ensureAudio();
+      sfx.start();
+      // Kick off music shortly after the start fanfare ends — cancellable
+      // via stopBgMusic if the user toggles off or answers fast.
+      startBgMusicDelayed(0.6);
+      renderGameQuestion();
+    }
+
+    function renderGameQuestion() {
+      stopTimer();
+      const item = QUIZ[gi];
+      glocked = false;
+      gtimeLeft = TIMER_SEC;
+
+      $game.innerHTML =
+        sparkleHTML() +
+        '<div class="game-topbar">' +
+          '<div class="qcount">Question ' + (gi + 1) + ' / ' + QUIZ.length + '</div>' +
+          soundButtonHTML() +
+          '<div class="gscore">Score: ' + gscore + '</div>' +
+        '</div>' +
+        '<div class="game-timer" id="gTimer">' +
+          '<div class="game-timer-fill" id="gTimerFill"></div>' +
+          '<div class="game-time-num" id="gTimeNum">' + TIMER_SEC + '</div>' +
+        '</div>' +
+        '<div class="game-question">' + item.q + '</div>' +
+        '<div class="game-answers" id="gAnswers"></div>';
+
+      wireSoundToggle();
+
+      const $answers = document.getElementById('gAnswers');
+      item.o.forEach((label, n) => {
+        const color = COLORS[n];
+        const btn = document.createElement('button');
+        btn.className = 'game-answer ' + color;
+        btn.dataset.idx = n;
+        // Use the question's custom mascot if provided, otherwise fall back
+        // to the default colored Kahoot mascot for this slot.
+        const customMascot = item.mascots && item.mascots[n];
+        const shapeSvg = customMascot
+          ? '<svg viewBox="0 0 100 100" width="48" height="48"><use href="#' + customMascot + '"/></svg>'
+          : SHAPES[color];
+        btn.innerHTML = '<span class="shape">' + shapeSvg + '</span><span>' + label + '</span>';
+        btn.onclick = () => gameAnswer(n, btn);
+        $answers.appendChild(btn);
+      });
+
+      // Kick off timer bar animation: shrink from full to empty over TIMER_SEC seconds.
+      // We disable the transition, set the initial state, force a reflow, then enable
+      // the long-form transition and trigger it. Without the disable+reflow dance the
+      // bar would briefly flash using the CSS default transition (1s).
+      requestAnimationFrame(() => {
+        const fill = document.getElementById('gTimerFill');
+        if (!fill) return;
+        fill.style.transition = 'none';
+        fill.style.transform  = 'scaleX(1)';
+        fill.offsetWidth; // force reflow
+        fill.style.transition = 'transform ' + TIMER_SEC + 's linear';
+        fill.style.transform  = 'scaleX(0)';
+      });
+
+      gtimer = setInterval(() => {
+        gtimeLeft--;
+        const numEl = document.getElementById('gTimeNum');
+        const barEl = document.getElementById('gTimer');
+        if (numEl) numEl.textContent = gtimeLeft;
+        if (gtimeLeft <= 5 && barEl) {
+          barEl.classList.add('urgent');
+          sfx.urgent();
+        } else {
+          sfx.tick();
+        }
+        if (gtimeLeft <= 0) {
+          stopTimer();
+          gameAnswer(-1, null); // Time's up
+        }
+      }, 1000);
+    }
+
+    function stopTimer() {
+      if (gtimer) { clearInterval(gtimer); gtimer = null; }
+    }
+
+    function gameAnswer(n, btn) {
+      if (glocked) return;
+      glocked = true;
+      stopTimer();
+      stopBgMusic();
+
+      const item = QUIZ[gi];
+      const correct = (n === item.a);
+      const timedOut = (n === -1);
+
+      // Mark all buttons
+      const buttons = document.querySelectorAll('.game-answer');
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.a) b.classList.add('correct');
+        else b.classList.add('faded');
+      });
+      if (btn && !correct) btn.classList.add('wrong-pick');
+
+      // Sound
+      if (timedOut)      sfx.timeup();
+      else if (correct)  sfx.correct();
+      else               sfx.wrong();
+
+      if (correct) gscore++;
+
+      // Reveal screen after a brief pause
+      setTimeout(() => renderGameReveal(correct, timedOut), 1400);
+    }
+
+    function renderGameReveal(correct, timedOut) {
+      const item = QUIZ[gi];
+      const verdict = timedOut ? 'TIME&rsquo;S UP' : (correct ? 'CORRECT!' : 'NOT QUITE');
+      const cls     = timedOut ? 'timeup'         : (correct ? 'right'     : 'wrong');
+
+      $game.innerHTML =
+        sparkleHTML(8) +
+        '<div class="game-topbar">' +
+          '<div class="qcount">Question ' + (gi + 1) + ' / ' + QUIZ.length + '</div>' +
+          soundButtonHTML() +
+          '<div class="gscore">Score: ' + gscore + '</div>' +
+        '</div>' +
+        '<div class="game-reveal">' +
+          '<div class="verdict ' + cls + '">' + verdict + '</div>' +
+          '<div class="answer-was">The answer was <strong>' + item.o[item.a] + '</strong></div>' +
+          '<button class="game-start-btn" id="gNextBtn" style="margin-top:32px;font-size:16px;padding:14px 32px">' +
+            (gi + 1 >= QUIZ.length ? 'See final score →' : 'Next question →') +
+          '</button>' +
+        '</div>';
+
+      wireSoundToggle();
+      document.getElementById('gNextBtn').onclick = () => {
+        gi++;
+        if (gi >= QUIZ.length) renderGameEnd();
+        else { startBgMusic(); renderGameQuestion(); }
+      };
+    }
+
+    function renderGameEnd() {
+      stopTimer();
+      stopBgMusic();
+      playVictoryFanfare();
+
+      const msg = gameEndMessage(gscore);
+      $game.innerHTML =
+        '<div class="game-end">' +
+          '<div class="glabel">Final Score</div>' +
+          '<div class="gbig">' + gscore + ' / ' + QUIZ.length + '</div>' +
+          '<div class="gmsg">' + msg + '</div>' +
+          '<div class="gactions">' +
+            '<button class="gbtn" id="gPlayAgain">Play again</button>' +
+            '<button class="gbtn ghost" id="gBackStart">Back to start</button>' +
+          '</div>' +
+        '</div>';
+
+      document.getElementById('gPlayAgain').onclick = () => { ensureAudio(); sfx.start(); startGame(); };
+      document.getElementById('gBackStart').onclick = renderGameStart;
+
+      confettiBurst();
+    }
+
+    function gameEndMessage(s) {
+      if (s === QUIZ.length) return 'PERFECT SCORE! 2010s champion!';
+      if (s >= 6)             return 'Amazing! You really know the 2010s.';
+      if (s >= 4)             return 'Nice work — solid effort!';
+      return 'Good try! Time to study up on the 2010s.';
+    }
+
+    function confettiBurst() {
+      const colors = ['#ff3d8a','#ffd23f','#3ddca0','#5cc8ff','#8a4dff','#ff7a3d'];
+      for (let i = 0; i < 70; i++) {
+        const c = document.createElement('div');
+        c.className = 'confetti-piece';
+        c.style.left = (Math.random() * 100) + '%';
+        c.style.background = colors[i % colors.length];
+        c.style.animationDelay = (Math.random() * 1.2) + 's';
+        c.style.animationDuration = (2.4 + Math.random() * 2) + 's';
+        c.style.transform = 'rotate(' + (Math.random() * 360) + 'deg)';
+        $game.appendChild(c);
+      }
+      // Clean up after the longest animation finishes
+      setTimeout(() => {
+        $game.querySelectorAll('.confetti-piece').forEach(p => p.remove());
+      }, 6000);
+    }
+
+    // Pre-render the game start screen so it's ready when the tab is clicked
+    renderGameStart();
+  </script>
+</body>
+</html>

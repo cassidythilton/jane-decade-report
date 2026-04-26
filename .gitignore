@@ -1,0 +1,13 @@
+# Don't publish private source materials — only the deployed site.
+*.pdf
+emailfromteacher.txt
+talk-track.md
+talk-track.html
+lady-gaga-interview-a-star-is-born.jpg
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
